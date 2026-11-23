@@ -20,6 +20,8 @@
   --red: #b5232b;
   --brass: #c8a45a;
   --serif: "Fraunces", "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 html, body { background: var(--felt-deep); }
@@ -35,6 +37,13 @@ html, body { background: var(--felt-deep); }
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"),
     radial-gradient(110% 85% at 28% 18%, #124736 0%, var(--felt) 38%, var(--felt-deep) 100%);
 }
+.reveal-viewport::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(60% 55% at 26% 22%, rgba(255, 244, 214, .10) 0%, transparent 70%),
+    radial-gradient(120% 100% at 50% 45%, transparent 55%, rgba(0, 0, 0, .42) 100%);
+}
+.reveal .slides { z-index: 1; }
 .reveal .slides > section { overflow: hidden; }
 .reveal .slides > section::before {
   content: attr(data-suit); position: absolute; right: -30px; bottom: -190px;
@@ -52,7 +61,9 @@ html, body { background: var(--felt-deep); }
   height: 720px;
   padding: 52px 76px 64px;
 }
-.reveal h1, .reveal h2, .reveal h3 { font-family: var(--serif); margin: 0; }
+.reveal h1, .reveal h2, .reveal h3 { font-family: var(--serif); margin: 0; text-wrap: balance; }
+.reveal p, .reveal li, .reveal td { text-wrap: pretty; }
+.bars .v, .eq, .big { font-variant-numeric: tabular-nums; }
 .reveal h2 { font-size: 48px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
 .reveal a { color: var(--brass); text-decoration: underline; text-underline-offset: 5px; }
 .reveal a:focus-visible { outline: 3px solid var(--brass); outline-offset: 4px; }
@@ -117,10 +128,10 @@ html, body { background: var(--felt-deep); }
 .fan { position: relative; height: 380px; }
 .fan .pc { --w: 216px; position: absolute; left: 50%; top: 28px; margin-left: -108px; }
 .fan .c1 { transform: translate(-158px, 26px) rotate(-12deg); }
-.present .fan .c1 { animation: deal1 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
-.present .fan .c2 { animation: deal2 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
+.present .fan .c1 { animation: deal1 .9s var(--ease-out) .15s backwards; }
+.present .fan .c2 { animation: deal2 .9s var(--ease-out) .15s backwards; }
 .fan .c3 { transform: translate(158px, 26px) rotate(12deg); }
-.present .fan .c3 { animation: deal3 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
+.present .fan .c3 { animation: deal3 .9s var(--ease-out) .15s backwards; }
 @keyframes deal1 { from { transform: translate(0, 60px) rotate(0); opacity: 0; } }
 @keyframes deal2 { from { transform: translate(0, 60px); opacity: 0; } }
 @keyframes deal3 { from { transform: translate(0, 60px) rotate(0); opacity: 0; } }
@@ -309,21 +320,21 @@ html, body { background: var(--felt-deep); }
   box-shadow: 0 1px 0 rgba(0, 0, 0, .35);
 }
 .dcard { position: absolute; left: 0; top: 20px; width: 140px; height: 196px; perspective: 900px; }
-.dcard .in { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateY(180deg); transition: transform .6s cubic-bezier(.3, .7, .2, 1); }
+.dcard .in { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateY(180deg); transition: transform .6s var(--ease-out); }
 .dcard.up .in { transform: rotateY(0); }
 .dcard .in > * { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 .dcard .in > .bk { transform: rotateY(180deg); }
 .dcard .pc { --w: 140px; }
 .eq { height: 96px; margin-top: 22px; font-family: var(--serif); font-weight: 800; font-size: 70px; line-height: 96px; letter-spacing: -0.01em; white-space: nowrap; }
 .eq .x { color: var(--brass); margin: 0 .25em; }
-.eq .res { display: inline-block; animation: pop .5s cubic-bezier(.2, .9, .3, 1.3) both; }
-@keyframes pop { from { transform: scale(.6); opacity: 0; } }
+.eq .res { display: inline-block; animation: pop .4s var(--ease-out) backwards; }
+@keyframes pop { from { transform: scale(.94); opacity: 0; } }
 .ctl { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
 .btn {
   font: 600 22px/1 var(--sans); color: var(--ivory); background: rgba(0, 0, 0, .18);
   border: 2px solid var(--brass); border-radius: 999px; padding: 15px 26px; cursor: pointer;
 }
-.btn:hover:not(:disabled) { background: var(--brass); color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { .btn:hover:not(:disabled) { background: var(--brass); color: var(--ink); } }
 .btn:focus-visible, .die:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .btn:disabled, .die:disabled { opacity: .3; cursor: default; }
 .dice { display: flex; gap: 10px; margin-left: 26px; }
@@ -336,24 +347,29 @@ html, body { background: var(--felt-deep); }
 .ctl .btn.ghost { margin-left: auto; border-color: var(--felt-line); color: var(--ivory-dim); }
 
 /* 장면이 나타날 때의 움직임 */
-.reveal section.present .dv .pc { animation: dealin .9s cubic-bezier(.2, .8, .2, 1) both; }
-.reveal section.present .dv h2 { animation: rise .7s ease-out .25s both; }
-.reveal section.present .dv p { animation: rise .7s ease-out .45s both; }
+.reveal section.present .dv .pc { animation: dealin .9s var(--ease-out) backwards; }
+.reveal section.present .dv h2 { animation: rise .7s ease-out .25s backwards; }
+.reveal section.present .dv p { animation: rise .7s ease-out .45s backwards; }
 @keyframes dealin { from { transform: translate(-260px, 120px) rotate(-38deg); opacity: 0; } }
-@keyframes rise { from { transform: translateY(26px); opacity: 0; } }
-.reveal section.present .seven .pc { animation: dealin .9s cubic-bezier(.2, .8, .2, 1) both; }
-.reveal section.present .bars .bar { transform-origin: left center; animation: grow 1s cubic-bezier(.2, .8, .2, 1) .2s both; }
+@keyframes rise { from { transform: translateY(16px); opacity: 0; } }
+.reveal section.present .seven .pc { animation: dealin .9s var(--ease-out) backwards; }
+.reveal section.present .bars .bar { transform-origin: left center; animation: grow 1s var(--ease-out) .2s backwards; }
 @keyframes grow { from { transform: scaleX(0); } }
-.reveal section.present .chap div { animation: rise .5s ease-out both; }
-.reveal section.present .chap div:nth-child(1) { animation-delay: .05s; } .reveal section.present .chap div:nth-child(3) { animation-delay: .15s; }
-.reveal section.present .chap div:nth-child(5) { animation-delay: .25s; } .reveal section.present .chap div:nth-child(7) { animation-delay: .35s; }
-.reveal section.present .chap div:nth-child(2) { animation-delay: .45s; } .reveal section.present .chap div:nth-child(4) { animation-delay: .55s; }
-.reveal section.present .chap div:nth-child(6) { animation-delay: .65s; } .reveal section.present .chap div:nth-child(8) { animation-delay: .75s; }
-.reveal section.present .because { animation: rise .8s ease-out .1s both; }
+.reveal section.present [data-st] { animation: rise .55s var(--ease-out) backwards; animation-delay: calc(var(--i) * 60ms + 120ms); }
+@keyframes fadeonly { from { opacity: 0; } }
+
+/* 누르는 느낌, 마우스가 있을 때만 떠오름 */
+.btn, .die { transition: transform .13s var(--ease-out), background-color .15s ease, color .15s ease; }
+.btn:active:not(:disabled) { transform: scale(.97); }
+.die:active:not(:disabled) { transform: translateY(3px); }
+.tilt { transition: transform .18s var(--ease-out); will-change: transform; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal section.present *, .fan .pc, .eq .res { animation: none !important; }
+  .reveal section.present [data-st], .reveal section.present .dv .pc, .reveal section.present .dv h2, .reveal section.present .dv p,
+  .reveal section.present .seven .pc, .present .fan .pc, .eq .res { animation-name: fadeonly !important; }
+  .reveal section.present .bars .bar { animation: none; }
   .dcard .in { transition: none; }
+  .tilt { transition: none; }
   .reveal .slides section, .reveal .fragment { transition: none !important; }
 }
 </style>
@@ -817,7 +833,25 @@ html, body { background: var(--felt-deep); }
     });
     page.appendChild(main);
     sec.insertBefore(page, sec.firstChild);
+    if (sec.id === "demo142") return;
+    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .main > .lead, .fix, .final, .final-sub, .got div, .demo > *, .three li, .end h2, .end p");
+    var k = 0;
+    items.forEach(function (el) {
+      if (el.closest("[data-st]")) return;
+      el.dataset.st = ""; el.style.setProperty("--i", Math.min(k++, 12));
+    });
   });
+  if (matchMedia("(hover: hover) and (pointer: fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll(".dv .pc, .seven .pc").forEach(function (c) {
+      var base = c.closest(".seven") ? "rotate(-5deg)" : "rotate(-6deg)";
+      c.classList.add("tilt");
+      c.addEventListener("mousemove", function (e) {
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        c.style.transform = "perspective(900px) " + base + " rotateY(" + (x * 16).toFixed(1) + "deg) rotateX(" + (-y * 16).toFixed(1) + "deg) scale(1.03)";
+      });
+      c.addEventListener("mouseleave", function () { c.style.transform = ""; });
+    });
+  }
 })();
 Reveal.initialize({
   width: 1280,
@@ -828,7 +862,7 @@ Reveal.initialize({
   fragments: !location.search.includes("nofrag"),
   slideNumber: "c/t",
   transition: "slide",
-  transitionSpeed: "default",
+  transitionSpeed: "fast",
   plugins: [RevealNotes]
 });
 
@@ -896,7 +930,7 @@ Reveal.on("slidechanged", function (ev) { countUp(ev.currentSlide); });
       el.innerHTML = '<div class="in"><div class="pc' + (suit === "♥" || suit === "♦" ? " red" : "") + '" data-rank="' + r + '" data-suit="' + suit + '"></div><div class="bk"></div></div>';
       window.buildCard(el.querySelector(".pc"));
       el.style.transform = "translate(-10px,-14px)";
-      el.style.transition = "transform .7s cubic-bezier(.2,.8,.2,1)";
+      el.style.transition = "transform .7s cubic-bezier(0.23,1,0.32,1)";
       stage.appendChild(el); cards.push(el); slots.push(i);
       setTimeout(function () {
         el.style.transform = "translate(" + slotX(i) + "px,0)";
@@ -924,7 +958,7 @@ Reveal.on("slidechanged", function (ev) { countUp(ev.currentSlide); });
       el.animate(wrap
         ? [{ transform: a }, { transform: "translate(" + (slotX(from) + slotX(to)) / 2 + "px,-150px) rotate(" + (dir > 0 ? 10 : -10) + "deg)" }, { transform: z }]
         : [{ transform: a }, { transform: z }],
-        { duration: dur, easing: "cubic-bezier(.4,0,.2,1)" });
+        { duration: dur, easing: "cubic-bezier(0.77,0,0.175,1)" });
     });
     dice.querySelectorAll(".die").forEach(function (x) { x.classList.toggle("on", +x.dataset.n === n); });
     eq.innerHTML = fmt(BASE) + '<span class="x">×</span>' + n + '<span class="x">=</span>';
