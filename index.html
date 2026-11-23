@@ -1482,8 +1482,12 @@ Reveal.on("slidechanged", function (ev) { countUp(ev.currentSlide); });
 
   function draw() {
     if (busy || drawn) return; busy = true; drawn = true; bS.disabled = true; bD.disabled = true;
+    // 빨강 석 장, 검정 석 장을 무작위 자리에 놓는다
+    var colors = ["r", "r", "r", "b", "b", "b"];
+    for (var k = colors.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)), tmp = colors[k]; colors[k] = colors[j]; colors[j] = tmp; }
     RANKS.forEach(function (r, i) {
-      var suit = SUITS[Math.floor(Math.random() * 4)];
+      var pool = colors[i] === "r" ? ["♥", "♦"] : ["♠", "♣"];
+      var suit = pool[Math.floor(Math.random() * 2)];
       var el = document.createElement("div"); el.className = "dcard"; el.style.zIndex = 10 + i;
       el.innerHTML = '<div class="in"><div class="pc' + (suit === "♥" || suit === "♦" ? " red" : "") + '" data-rank="' + r + '" data-suit="' + suit + '"></div><div class="bk"></div></div>';
       window.buildCard(el.querySelector(".pc"));
