@@ -227,11 +227,11 @@ html, body { background: var(--felt-deep); }
 
 /* 13. chae-ACAAN */
 .seven { display: grid; grid-template-columns: 340px 1fr; gap: 70px; align-items: center; margin-top: 10px; }
-.seven .pc { --w: 300px; margin-left: 24px; transform: rotate(-5deg); }
-.big { font-family: var(--serif); font-weight: 900; font-size: 168px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+.seven .pc { --w: 270px; margin-left: 24px; transform: rotate(-5deg); }
+.big { font-family: var(--serif); font-weight: 900; font-size: 128px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
 .big small { font-size: 42px; font-weight: 700; margin-left: 10px; letter-spacing: 0; }
-.but { list-style: none; margin: 40px 0 0; padding: 0; }
-.but li { padding: 13px 0 13px 22px; border-left: 4px solid var(--red); margin-bottom: 16px; font-size: 31px; background: rgba(0,0,0,.18); }
+.but { list-style: none; margin: 24px 0 0; padding: 0; }
+.but li { padding: 13px 0 13px 22px; border-left: 4px solid var(--red); margin-bottom: 12px; font-size: 27px; background: rgba(0,0,0,.18); }
 
 /* 14. A-PMFS */
 .bars { display: grid; grid-template-columns: 270px 1fr 130px; gap: 15px 24px; align-items: center; font-size: 27px; }
@@ -885,20 +885,21 @@ html[data-theme="wine"] .cyc svg > text { fill: #ffd0da; }
 
 <!-- 13 3학기: chae-ACAAN -->
 <section>
-  <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>1차 chae-ACAAN: 너무 좋은 결과</h2></div>
+  <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>1차 chae-ACAAN: 하트 7로 쏠린 결과</h2></div>
   <div class="seven">
     <div class="pc red" data-rank="7" data-suit="♥" aria-hidden="true"></div>
     <div>
       <p class="big"><span data-count="97.8">97.8</span>%<small>가 하트 7</small></p>
-      <p class="dim" style="margin-top:16px;font-size:30px">배치 응답 52,000건의 결과</p>
+      <p class="dim" style="margin-top:14px;font-size:27px">52,000건 가운데 50,850건. 한 카드로 치우쳐 믿을 수 없는 결과였다.</p>
       <ul class="but">
         <li class="fragment">비교할 통제 조건이 없었다</li>
         <li class="fragment">응답 형식 예시에 하트 7이 들어 있었다</li>
+        <li class="fragment">적중률 2.18%. 하트 7만 답해도 약 1.92%가 나온다</li>
       </ul>
     </div>
   </div>
   <p class="foot">3학기, 실험</p>
-  <aside class="notes">1차 발표에서는 52,000건의 응답 가운데 97.8퍼센트가 하트 7이었습니다. 처음에는 사람들이 7을 자주 고른다는 선행 연구와 맞는 결과라고 해석했습니다. 그런데 비교할 통제 조건이 없었고, 응답 형식을 알려 주는 예시에 하트 7이 들어 있었습니다. 두 번째 문제는 에세이를 쓰면서 발견했습니다.</aside>
+  <aside class="notes">1차 발표에서는 52,000건의 응답 가운데 97.8퍼센트가 하트 7이었습니다. 좋은 결과가 아니라, 한 카드로만 치우쳐서 믿을 수 없는 결과였습니다. 비교할 통제 조건이 없었고, 응답 형식을 알려 주는 예시에 하트 7이 들어 있었습니다. 대본이 겨냥한 카드를 맞힌 비율은 2.18퍼센트였는데, 전부 하트 7이라고만 답해도 1.92퍼센트는 나옵니다. 예시의 문제는 에세이를 쓰면서 발견했습니다.</aside>
 </section>
 
 <!-- 14 3학기: A-PMFS -->
@@ -925,7 +926,7 @@ html[data-theme="wine"] .cyc svg > text { fill: #ffd0da; }
   <div class="loop">
     <div class="sheet"><h3>만든다</h3><p>가상의 관객을 만들고, 카드 응답을 모으는 시스템을 구현했다.</p></div>
     <div class="arr" aria-hidden="true">▶</div>
-    <div class="sheet"><h3>틀린 곳을 찾는다</h3><p>결과가 좋을수록 설계를 먼저 의심했다. 통제 조건이 빠져 있었다.</p></div>
+    <div class="sheet"><h3>틀린 곳을 찾는다</h3><p>응답이 한 카드로 쏠린 것을 보고 설계를 의심했다. 통제 조건이 빠져 있었다.</p></div>
     <div class="arr" aria-hidden="true">▶</div>
     <div class="sheet"><h3>다시 설계한다</h3><p>조건을 나누고 성공 기준을 미리 정한 뒤 다시 실행했다.</p></div>
   </div>
@@ -982,7 +983,7 @@ html[data-theme="wine"] .cyc svg > text { fill: #ffd0da; }
   <div class="sheet fix">
     <table>
       <tr><th>발표 때의 해석</th><th>에세이의 서술</th></tr>
-      <tr><td>하트 7이 97.8%. 사람들이 7을 자주 고른다는 연구와 맞는다.</td><td>통제 조건이 없고 응답 예시에 하트 7이 있었으므로 선행 연구의 재현으로 볼 수 없다.</td></tr>
+      <tr><td>하트 7이 97.8%. 사람의 ‘7의 우세’가 모델에 나타났을 수 있다.</td><td>통제 조건이 없고 응답 예시에 하트 7이 있었으므로 선행 연구의 재현으로 볼 수 없다.</td></tr>
       <tr><td>적중률이 약 4.6배 올랐다.</td><td>차이는 2.13%p다. 4.6배는 통제 조건의 값이 작아서 커 보이는 비율이다.</td></tr>
       <tr><td>키워드 프라이밍의 효과를 확인했다.</td><td>이 모델과 이 설계에서 관찰한 차이다. 사람 관객에게도 나타나는지는 확인하지 못했다.</td></tr>
     </table>
