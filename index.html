@@ -277,6 +277,15 @@ html, body { background: var(--felt-deep); }
 .fix td:first-child { width: 40%; color: #6a5f52; }
 .fix td:last-child { font-weight: 600; padding-right: 0; }
 
+/* 검사 방법 표 */
+.chk { padding: 4px 32px; }
+.chk th { padding: 13px 0 8px; font-size: 18px; }
+.chk td { padding: 11px 22px 11px 0; font-size: 21px; line-height: 1.45; }
+.fix.chk td:first-child { width: 27%; color: inherit; font-weight: 600; }
+.fix.chk td:nth-child(2) { width: 31%; font-weight: 400; opacity: .78; }
+.fix.chk td:last-child { font-weight: 500; }
+.caveat { margin-top: 20px; font-size: 22px; color: var(--ivory-dim); }
+
 /* 19. 결론 */
 .final { font-family: var(--serif); font-weight: 700; font-size: 52px; line-height: 1.5; letter-spacing: -0.01em; max-width: 21em; margin-top: 30px; }
 .final-sub { margin-top: 56px; font-size: 30px; max-width: 32em; color: var(--ivory-dim); }
@@ -902,6 +911,19 @@ html[data-theme="wine"] .cyc svg > text { fill: #ffd0da; }
   <aside class="notes">1차 발표에서는 52,000건의 응답 가운데 97.8퍼센트가 하트 7이었습니다. 좋은 결과가 아니라, 한 카드로만 치우쳐서 믿을 수 없는 결과였습니다. 비교할 통제 조건이 없었고, 응답 형식을 알려 주는 예시에 하트 7이 들어 있었습니다. 대본이 겨냥한 카드를 맞힌 비율은 2.18퍼센트였는데, 전부 하트 7이라고만 답해도 1.92퍼센트는 나옵니다. 예시의 문제는 에세이를 쓰면서 발견했습니다.</aside>
 </section>
 
+<!-- 3학기: 고친 설계 -->
+<section>
+  <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>그래서 2차에서는 설계를 고쳤다</h2></div>
+  <div class="got">
+    <div><b>통제 조건과 위약 조건</b><p>아무 자극도 주지 않는 조건과, 다른 카드의 키워드를 주는 조건을 두어 비교했다.</p></div>
+    <div><b>비선호 목표</b><p>사전 보정에서 한 번도 뽑히지 않은 카드를 목표로 정해, 모델이 원래 좋아하는 카드와 분리했다.</p></div>
+    <div><b>키워드 제시</b><p>장면과 비유로 쓴 대본 대신, 임베딩 유사도로 고른 단어를 5개, 10개, 15개 제시했다.</p></div>
+    <div><b>응답 예시 제거</b><p>특정 카드를 유도할 수 있는 카드 표기 예시를 본 실험 전에 지웠다.</p></div>
+  </div>
+  <p class="foot">3학기, 실험</p>
+  <aside class="notes">한 카드로 쏠린 결과를 믿을 수 없었기 때문에, 2차에서는 설계를 네 군데 고쳤습니다. 비교할 통제 조건과 위약 조건을 두었고, 모델이 원래 좋아하는 카드가 아니라 사전 보정에서 한 번도 뽑히지 않은 카드를 목표로 삼았습니다. 대본은 키워드 나열로 바꾸었고, 1차에서 문제가 된 응답 예시는 지웠습니다.</aside>
+</section>
+
 <!-- 14 3학기: A-PMFS -->
 <section>
   <div class="head" style="margin-bottom:26px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>2차 A-PMFS: 조건을 나누어 다시 묻다</h2></div>
@@ -918,6 +940,24 @@ html[data-theme="wine"] .cyc svg > text { fill: #ffd0da; }
   </div>
   <p class="foot">3학기, 실험</p>
   <aside class="notes">2차 발표에서는 설계를 고쳤습니다. 아무 키워드도 주지 않는 통제 조건, 키워드 수를 달리한 세 조건, 다른 카드의 키워드를 주는 위약 조건을 두고 15,000회를 돌렸습니다. 목표 카드의 적중률은 0.60퍼센트에서 2.73퍼센트로 올랐지만, 공연에 쓸 만한 크기는 아니었습니다. 자세한 방법은 3학기 발표 자료에 있습니다.</aside>
+</section>
+
+<!-- 3학기: 여러 방법으로 검사 -->
+<section>
+  <div class="head" style="margin-bottom:14px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>차이가 버티는지 여러 방법으로 검사했다</h2></div>
+  <div class="sheet fix chk">
+    <table>
+      <tr><th>방법</th><th>무엇을 보는가</th><th>결과</th></tr>
+      <tr><td>카이제곱 검정</td><td>다섯 조건의 분포가 서로 다른가</td><td>χ²(4) = 59.05, p = 4.6×10⁻¹²</td></tr>
+      <tr><td>크라메르의 V</td><td>차이의 크기가 충분한가</td><td>0.082. 처음 정한 기준 0.2에 미달</td></tr>
+      <tr><td>페르소나 단위 분석, Holm 보정</td><td>같은 페르소나의 반복 응답과 다중 비교를 고려해도 남는가</td><td>키워드 15개는 유지(p = 0.000430), 5개는 유의하지 않음(p = 0.100)</td></tr>
+      <tr><td>부트스트랩 20,000회</td><td>차이의 범위가 얼마인가</td><td>+1.17 ~ +3.23%p</td></tr>
+      <tr><td>민감도 점검</td><td>예비 자료를 빼거나 표기 규칙을 바꿔도 같은가</td><td>+2.04%p, +2.17%p로 유지</td></tr>
+    </table>
+  </div>
+  <p class="caveat">모두 같은 자료로 한 사후 분석이어서 독립된 반복 실험을 대신하지는 못한다. 적중 82건 가운데 49건은 상위 10개 페르소나에서 나왔다.</p>
+  <p class="foot">3학기, 실험</p>
+  <aside class="notes">차이가 나왔다고 바로 믿지 않고, 그 차이가 버티는지 여러 방법으로 검사했습니다. 방법마다 묻는 것이 다릅니다. 분포가 다른지, 차이가 충분히 큰지, 같은 페르소나의 반복 응답을 고려해도 남는지, 자료를 일부 빼도 같은지를 봤습니다. 키워드 15개 조건의 차이는 유지됐지만 크기는 기준에 못 미쳤고, 이 검사들도 같은 자료로 한 사후 분석이라는 한계가 있습니다. 이 가운데 페르소나 단위 분석과 민감도 점검은 에세이를 쓰면서 추가한 것입니다.</aside>
 </section>
 
 <!-- 15 3학기: 반복 -->
