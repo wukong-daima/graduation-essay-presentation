@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>졸업 에세이를 어떻게 쓰게 되었나 | 융합인문공학 19기 손재완</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<style>
+:root {
+  --felt: #0e3a2d;
+  --felt-deep: #082a20;
+  --felt-line: #2a5a4a;
+  --ivory: #f5efdf;
+  --ivory-dim: #cfd8cc;
+  --ink: #1b1612;
+  --red: #b5232b;
+  --brass: #c8a45a;
+  --serif: "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", serif;
+  --sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+html, body { background: var(--felt-deep); }
+.reveal {
+  font-family: var(--sans);
+  font-size: 28px;
+  line-height: 1.5;
+  color: var(--ivory);
+  word-break: keep-all;
+}
+.reveal-viewport {
+  background: radial-gradient(120% 90% at 30% 20%, var(--felt) 0%, var(--felt-deep) 100%);
+}
+.reveal .slides { text-align: left; }
+.reveal .slides > section {
+  box-sizing: border-box;
+  height: 720px;
+  padding: 52px 76px 64px;
+}
+.reveal h1, .reveal h2, .reveal h3 { font-family: var(--serif); margin: 0; }
+.reveal h2 { font-size: 44px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
+.reveal a { color: var(--brass); text-decoration: underline; text-underline-offset: 5px; }
+.reveal a:focus-visible { outline: 3px solid var(--brass); outline-offset: 4px; }
+.reveal strong { font-weight: 600; color: #fff; }
+
+/* 슬라이드 머리: 카드 모서리 인덱스 + 제목 */
+.head { display: flex; align-items: center; gap: 26px; margin-bottom: 34px; }
+.chip {
+  flex: none; width: 58px; height: 80px; border-radius: 9px;
+  background: var(--ivory); color: var(--ink);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-family: var(--serif); font-weight: 900; line-height: 1;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, .28);
+}
+.chip b { font-size: 30px; font-weight: 900; }
+.chip i { font-size: 26px; font-style: normal; margin-top: 4px; }
+.chip.red { color: var(--red); }
+.foot {
+  position: absolute; left: 76px; bottom: 24px;
+  font-size: 17px; color: var(--ivory-dim);
+}
+.reveal .slide-number {
+  background: none; color: var(--ivory-dim); font-family: var(--sans);
+  font-size: 17px; right: 76px; bottom: 24px;
+}
+.lead { font-size: 30px; max-width: 30em; }
+.dim { color: var(--ivory-dim); }
+.small { font-size: 22px; }
+
+/* 상아색 면: 표와 인용 */
+.sheet {
+  background: var(--ivory); color: var(--ink); border-radius: 12px;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .25);
+}
+.sheet strong { color: var(--ink); font-weight: 600; }
+.reveal table { border-collapse: collapse; width: 100%; margin: 0; }
+.reveal table th, .reveal table td { border: 0; text-align: left; vertical-align: top; }
+
+/* 1. 표지 */
+.cover { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 30px; }
+.cover h1 { font-size: 68px; font-weight: 900; line-height: 1.22; letter-spacing: -0.02em; }
+.cover .sub { font-size: 30px; margin-top: 26px; color: var(--ivory-dim); max-width: 15em; }
+.cover .who { margin-top: 64px; font-size: 24px; line-height: 1.6; }
+.cover .who b { font-family: var(--serif); font-size: 28px; font-weight: 700; }
+.fan { position: relative; height: 470px; }
+.pc {
+  position: absolute; left: 46%; top: 80px; width: 180px; height: 258px; margin-left: -90px;
+  background: var(--ivory); color: var(--ink); border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .4);
+  font-family: var(--serif); transform-origin: 50% 130%;
+}
+.pc.red { color: var(--red); }
+.pc .idx { position: absolute; left: 16px; top: 12px; text-align: center; line-height: 1; font-weight: 900; }
+.pc .idx b { display: block; font-size: 40px; }
+.pc .idx i { display: block; font-style: normal; font-size: 30px; margin-top: 4px; }
+.pc .idx.btm { left: auto; top: auto; right: 16px; bottom: 12px; transform: rotate(180deg); }
+.pc .face { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.pc .face span { font-size: 76px; line-height: 1; }
+.pc .face em { font-style: normal; font-family: var(--sans); font-size: 18px; font-weight: 600; color: var(--ink); margin-top: 14px; }
+.pc.c1 { transform: translate(-122px, 16px) rotate(-13deg); }
+.pc.c2 { transform: rotate(0deg); }
+.pc.c3 { transform: translate(122px, 16px) rotate(13deg); }
+
+/* 2. 순서 */
+.order { list-style: none; margin: 0; padding: 0; counter-reset: o; }
+.order li {
+  counter-increment: o; display: grid; grid-template-columns: 80px 1fr; align-items: baseline;
+  padding: 19px 0; border-bottom: 1px solid var(--felt-line); font-size: 34px;
+}
+.order li::before { content: counter(o); font-family: var(--serif); font-weight: 900; font-size: 40px; color: var(--brass); }
+.order li span { color: var(--ivory-dim); font-size: 25px; margin-left: 18px; }
+
+/* 3. 졸업 에세이 */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+.quote { padding: 34px 38px; font-family: var(--serif); font-size: 32px; line-height: 1.65; font-weight: 500; }
+.quote cite { display: block; margin-top: 18px; font-family: var(--sans); font-style: normal; font-size: 19px; color: #5b5146; }
+.asks { list-style: none; margin: 0; padding: 0; }
+.asks li { font-family: var(--serif); font-size: 38px; font-weight: 700; padding: 22px 0; border-bottom: 1px solid var(--felt-line); }
+
+/* 4. 선배들의 주제 */
+.topics { padding: 12px 30px; }
+.topics td { padding: 9px 0; font-size: 21.5px; line-height: 1.42; border-bottom: 1px solid #ddd3bd !important; }
+.topics tr:last-child td { border-bottom: 0 !important; }
+.topics td:first-child { width: 86px; font-family: var(--serif); font-weight: 900; font-size: 23px; }
+.topics .tbd { color: #7a6f60; font-size: 18px; margin-left: 8px; }
+.topics tr.me td { color: var(--red); font-weight: 600; }
+
+/* 5. 세 갈래 */
+.branches { padding: 14px 40px; }
+.branches td { padding: 26px 0; border-bottom: 1px solid #ddd3bd !important; font-size: 27px; line-height: 1.5; }
+.branches tr:last-child td { border-bottom: 0 !important; }
+.branches td:nth-child(1) { width: 70px; font-family: var(--serif); font-weight: 900; font-size: 44px; color: var(--red); line-height: 1.1; }
+.branches td:nth-child(2) { width: 300px; font-family: var(--serif); font-weight: 700; font-size: 31px; }
+
+/* 6. 나의 주제 */
+.mine { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-top: 8px; }
+.mine .sheet { padding: 34px 36px 40px; }
+.mine .n { font-family: var(--serif); font-weight: 900; font-size: 22px; color: var(--red); }
+.mine h3 { font-size: 36px; font-weight: 700; line-height: 1.35; margin: 8px 0 14px; }
+.mine p { font-size: 26px; color: #3d352d; }
+.also { margin-top: 44px; font-size: 26px; color: var(--ivory-dim); }
+
+/* 7. 타임라인 */
+.line { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 40px; position: relative; }
+.line::before { content: ""; position: absolute; left: 0; right: 0; top: 59px; height: 2px; background: var(--brass); }
+.stop { padding-right: 34px; position: relative; }
+.stop .dot { width: 120px; height: 120px; border-radius: 50%; background: var(--ivory); color: var(--ink); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 900; font-size: 31px; position: relative; box-shadow: 0 6px 0 rgba(0,0,0,.28); }
+.stop h3 { font-size: 40px; font-weight: 700; margin: 34px 0 12px; }
+.stop .what { font-size: 25px; color: var(--brass); margin-bottom: 20px; }
+.stop p.say { font-size: 29px; line-height: 1.55; }
+
+/* 8. 주제 잡기 */
+.because { font-family: var(--serif); font-weight: 900; font-size: 132px; line-height: 1.15; letter-spacing: -0.02em; margin: 30px 0 70px; }
+.years { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.years div { border-top: 2px solid var(--brass); padding-top: 16px; font-size: 28px; }
+.years b { display: block; font-family: var(--serif); font-size: 44px; font-weight: 900; color: var(--brass); margin-bottom: 6px; }
+
+/* 9. 142,857 */
+.cyc { display: grid; grid-template-columns: 440px 1fr; gap: 50px; align-items: center; margin-top: 20px; }
+.cyc svg { width: 440px; height: 440px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 40px; }
+.pair div { border-top: 2px solid var(--brass); padding-top: 14px; font-size: 25px; }
+.pair b { display: block; font-family: var(--serif); font-size: 32px; font-weight: 700; margin-bottom: 4px; }
+
+/* 10. 뇌과학 */
+.four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.four div { background: var(--ivory); color: var(--ink); border-radius: 10px; padding: 26px 22px 30px; box-shadow: 0 6px 0 rgba(0,0,0,.25); }
+.four b { display: block; font-family: var(--serif); font-size: 30px; font-weight: 700; margin-bottom: 12px; }
+.four span { font-size: 23px; line-height: 1.5; display: block; color: #3d352d; }
+.study { margin-top: 48px; display: grid; grid-template-columns: 250px 1fr; gap: 30px; align-items: start; }
+.study .tag { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--brass); }
+.study p { font-size: 27px; line-height: 1.6; }
+
+/* 11. 숙제 */
+.todo { list-style: none; margin: 0; padding: 0; }
+.todo li { display: grid; grid-template-columns: 1fr 330px; gap: 30px; align-items: center; padding: 34px 0; border-bottom: 1px solid var(--felt-line); font-size: 31px; }
+.todo li span { font-size: 25px; color: var(--brass); }
+
+/* 12. 질문을 실험으로 */
+.defs { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+.defs div { border-top: 2px solid var(--brass); padding-top: 16px; font-size: 28px; line-height: 1.55; }
+.defs b { display: block; font-family: var(--serif); font-size: 38px; font-weight: 700; margin-bottom: 6px; }
+.ask { margin-top: 56px; padding: 38px 44px; font-family: var(--serif); font-size: 40px; font-weight: 700; line-height: 1.45; }
+
+/* 13. chae-ACAAN */
+.seven { display: grid; grid-template-columns: 340px 1fr; gap: 70px; align-items: center; margin-top: 10px; }
+.seven .pc { position: relative; left: 0; top: 0; margin: 0 0 0 24px; width: 300px; height: 428px; transform: rotate(-5deg); }
+.seven .pc .face span { font-size: 160px; }
+.seven .pc .idx b { font-size: 52px; }
+.seven .pc .idx i { font-size: 38px; }
+.big { font-family: var(--serif); font-weight: 900; font-size: 150px; line-height: 1; letter-spacing: -0.02em; }
+.big small { font-size: 42px; font-weight: 700; margin-left: 10px; letter-spacing: 0; }
+.but { list-style: none; margin: 40px 0 0; padding: 0; }
+.but li { padding: 13px 0 13px 22px; border-left: 4px solid var(--red); margin-bottom: 16px; font-size: 31px; background: rgba(0,0,0,.18); }
+
+/* 14. A-PMFS */
+.bars { display: grid; grid-template-columns: 270px 1fr 130px; gap: 15px 24px; align-items: center; font-size: 27px; }
+.bars .bar { height: 46px; background: var(--ivory-dim); border-radius: 0 6px 6px 0; }
+.bars .bar.hit { background: var(--brass); }
+.bars .bar.ctl { background: #7f978b; }
+.bars .v { font-family: var(--serif); font-weight: 900; font-size: 34px; }
+.bars .k small { display: block; font-size: 20px; color: var(--ivory-dim); line-height: 1.2; }
+.verdict { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; font-size: 27px; }
+.verdict div { border-top: 2px solid var(--brass); padding-top: 12px; }
+
+/* 15. 반복 */
+.loop { display: grid; grid-template-columns: 1fr 60px 1fr 60px 1fr; align-items: stretch; margin-top: 6px; }
+.loop .sheet { padding: 32px 30px 38px; }
+.loop h3 { font-size: 35px; font-weight: 700; margin-bottom: 10px; }
+.loop p { font-size: 25px; color: #3d352d; line-height: 1.5; }
+.loop .arr { display: flex; align-items: center; justify-content: center; font-size: 34px; color: var(--brass); }
+.links { margin-top: 60px; font-size: 26px; line-height: 2; }
+.links span { color: var(--ivory-dim); display: inline-block; width: 230px; }
+
+/* 16. 여덟 장 */
+.chap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; }
+.chap div { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: 12px; padding: 24px 0; border-bottom: 1px solid var(--felt-line); font-size: 26px; }
+.chap b { font-family: var(--serif); font-weight: 900; font-size: 29px; color: var(--ivory); }
+.chap em { font-style: normal; font-size: 19px; padding: 4px 11px; border-radius: 20px; white-space: nowrap; }
+.chap em.s2 { background: var(--ivory); color: var(--red); font-weight: 600; }
+.chap em.s3 { background: var(--ivory); color: var(--ink); font-weight: 600; }
+.chap em.new { background: var(--brass); color: var(--ink); font-weight: 600; }
+.legend { margin-top: 38px; font-size: 25px; color: var(--ivory-dim); }
+
+/* 17. 새로 채운 장 */
+.newch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.newch .sheet { padding: 30px 28px 36px; }
+.newch .no { font-family: var(--serif); font-weight: 900; font-size: 24px; color: var(--red); }
+.newch h3 { font-size: 31px; font-weight: 700; line-height: 1.35; margin: 8px 0 14px; }
+.newch p { font-size: 24px; line-height: 1.55; color: #3d352d; }
+
+/* 18. 고친 것 */
+.fix { padding: 8px 34px; }
+.fix th { font-family: var(--sans); font-size: 19px; font-weight: 600; color: #6a5f52; padding: 16px 0 10px; border-bottom: 2px solid var(--ink) !important; }
+.fix td { padding: 20px 26px 20px 0; font-size: 23.5px; line-height: 1.5; border-bottom: 1px solid #ddd3bd !important; }
+.fix tr:last-child td { border-bottom: 0 !important; }
+.fix td:first-child { width: 40%; color: #6a5f52; }
+.fix td:last-child { font-weight: 600; padding-right: 0; }
+
+/* 19. 결론 */
+.final { font-family: var(--serif); font-weight: 700; font-size: 52px; line-height: 1.5; letter-spacing: -0.01em; max-width: 21em; margin-top: 30px; }
+.final-sub { margin-top: 56px; font-size: 30px; max-width: 32em; color: var(--ivory-dim); }
+
+/* 20. 회고 */
+.got { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 50px; margin-top: 16px; }
+.got div { border-top: 2px solid var(--brass); padding-top: 20px; }
+.got b { display: block; font-family: var(--serif); font-size: 38px; font-weight: 700; margin-bottom: 8px; }
+.got p { font-size: 27px; color: var(--ivory-dim); line-height: 1.55; }
+
+/* 21. 피드 페이지 */
+.demo { display: grid; grid-template-columns: 1fr 440px; gap: 56px; align-items: center; margin-top: 40px; }
+.demo .lead { font-size: 35px; line-height: 1.55; }
+.screen { border: 3px solid var(--ivory); border-radius: 14px; height: 310px; display: flex; flex-direction: column; overflow: hidden; }
+.screen .bar { height: 34px; border-bottom: 3px solid var(--ivory); display: flex; align-items: center; gap: 8px; padding-left: 14px; }
+.screen .bar i { width: 11px; height: 11px; border-radius: 50%; background: var(--ivory); }
+.screen .body { flex: 1; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 30px; font-weight: 700; }
+.url { margin-top: 44px; font-size: 25px; line-height: 1.7; }
+
+/* 22. 요약 */
+.three { list-style: none; margin: 0; padding: 0; counter-reset: t; }
+.three li { counter-increment: t; display: grid; grid-template-columns: 90px 1fr; align-items: start; padding: 32px 0; border-bottom: 1px solid var(--felt-line); }
+.three li::before { content: counter(t); font-family: var(--serif); font-weight: 900; font-size: 54px; line-height: 1; color: var(--brass); }
+.three b { display: block; font-family: var(--serif); font-size: 38px; font-weight: 700; }
+.three span { display: block; font-size: 26px; color: var(--ivory-dim); margin-top: 6px; }
+
+/* 23. 끝 */
+.end h2 { font-size: 84px; font-weight: 900; margin-top: 120px; }
+.end p { font-size: 28px; margin-top: 22px; color: var(--ivory-dim); }
+.end .links { margin-top: 70px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides section, .reveal .fragment { transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- 1 표지 -->
+<section>
+  <div class="cover" style="height:100%">
+    <div>
+      <h1>졸업 에세이를<br>어떻게 쓰게<br>되었나</h1>
+      <p class="sub">마술에서 시작한 세 학기가 여덟 장의 글이 되기까지</p>
+      <p class="who"><b>손재완</b><br>융합인문공학전공 19기, 전공세미나 발표</p>
+    </div>
+    <div class="fan" aria-hidden="true">
+      <div class="pc red c1"><div class="idx"><b>2</b><i>♦&#xFE0E;</i></div><div class="face"><span>♦&#xFE0E;</span><em>2학기, 주제</em></div><div class="idx btm"><b>2</b><i>♦&#xFE0E;</i></div></div>
+      <div class="pc c2"><div class="idx"><b>3</b><i>♣&#xFE0E;</i></div><div class="face"><span>♣&#xFE0E;</span><em>3학기, 실험</em></div><div class="idx btm"><b>3</b><i>♣&#xFE0E;</i></div></div>
+      <div class="pc red c3"><div class="idx"><b>4</b><i>♥&#xFE0E;</i></div><div class="face"><span>♥&#xFE0E;</span><em>4학기, 글</em></div><div class="idx btm"><b>4</b><i>♥&#xFE0E;</i></div></div>
+    </div>
+  </div>
+  <aside class="notes">안녕하세요, 19기 손재완입니다. 오늘은 연구 결과보다, 제가 졸업 에세이를 어떻게 쓰게 되었는지를 말씀드리려 합니다. 에세이를 앞둔 분들께 하나의 사례가 되었으면 합니다.</aside>
+</section>
+
+<!-- 2 순서 -->
+<section>
+  <div class="head"><h2>오늘의 순서</h2></div>
+  <ol class="order">
+    <li><div>융합인문공학의 졸업 에세이</div></li>
+    <li><div>선배들의 에세이 주제</div></li>
+    <li><div>주제의 세 갈래</div></li>
+    <li><div>나의 세 학기<span>2학기 주제 잡기, 3학기 실험, 4학기 글</span></div></li>
+    <li><div>회고와 시연<span>대학원에서 얻은 것, 직접 만든 피드 페이지</span></div></li>
+  </ol>
+  <aside class="notes">순서는 다섯 가지입니다. 먼저 졸업 에세이가 무엇인지, 선배들은 무엇을 썼는지 보고, 제 세 학기를 차례로 말씀드린 뒤 회고로 마치겠습니다.</aside>
+</section>
+
+<!-- 3 졸업 에세이 -->
+<section>
+  <div class="head"><div class="chip"><b>1</b><i>♠&#xFE0E;</i></div><h2>융합인문공학의 졸업 에세이</h2></div>
+  <div class="two">
+    <blockquote class="sheet quote" style="margin:0">
+      융인공은 인문학적 통찰과 공학의 과학기술적 사고를 겸비한 융합 인재의 양성을 지향한다.
+      <cite>졸업 에세이 서론에서</cite>
+    </blockquote>
+    <div>
+      <p class="dim small" style="margin-bottom:6px">에세이를 앞두고 누구나 만나는 세 가지 물음</p>
+      <ul class="asks">
+        <li>무엇을 쓸 것인가</li>
+        <li>학기마다 무엇을 준비할 것인가</li>
+        <li>어떻게 글로 옮길 것인가</li>
+      </ul>
+    </div>
+  </div>
+  <p class="foot">졸업 에세이</p>
+  <aside class="notes">우리 전공은 네 번째 학기에 졸업 에세이를 씁니다. 처음에는 무엇을 쓸지, 학기마다 무엇을 준비할지, 어떻게 글로 옮길지가 막막했습니다. 오늘은 이 세 물음에 제 경우로 답해 보겠습니다.</aside>
+</section>
+
+<!-- 4 선배들의 주제 -->
+<section>
+  <div class="head" style="margin-bottom:22px"><div class="chip"><b>2</b><i>♠&#xFE0E;</i></div><h2>선배들은 무엇을 썼나</h2></div>
+  <div class="sheet topics">
+    <table>
+      <tr><td>5기</td><td>수업의 게임화: 학습자가 주인공이 될 수 있을까?</td></tr>
+      <tr><td>10기</td><td>인간이 걸어온 길, 인간이 걸어갈 길</td></tr>
+      <tr><td>15기</td><td>정보보안을 강화하기 위한 개인과 국가의 기본자세: 노장사상과 법가사상에서 실마리를 찾다</td></tr>
+      <tr><td>16기</td><td>나를 창업한다는 것: AI 시대의 융합인문공학적 자기 성찰 방법론</td></tr>
+      <tr><td>17기</td><td>기술의 쓰나미, 철학의 방파제: 온고지신을 통한 4차 산업혁명 시대의 인문학적 응답</td></tr>
+      <tr><td>17기</td><td>모든 것은 연결되어 있다<span class="tbd">(가제)</span></td></tr>
+      <tr><td>17기</td><td>건설과 안전 관련 AI<span class="tbd">(가제)</span></td></tr>
+      <tr><td>18기</td><td>AI에게 도덕을 가르치자<span class="tbd">(가제)</span></td></tr>
+      <tr class="me"><td>19기</td><td>융합인문공학으로 탐구하는 마술의 과학: AI 페르소나를 활용한 심리적 포싱 실험과 멘탈 매직의 의미</td></tr>
+    </table>
+  </div>
+  <p class="foot">선배들의 에세이 주제</p>
+  <aside class="notes">어떻게 써야 할지에 대한 첫 번째 힌트는 선배들의 주제였습니다. 5기부터 저까지 아홉 편입니다. 가제라고 적은 세 편은 제가 제목을 정확히 기억하지 못한 것입니다. 한 편씩 짧게 소개하겠습니다.</aside>
+</section>
+
+<!-- 5 세 갈래 -->
+<section>
+  <div class="head" style="margin-bottom:26px"><div class="chip"><b>3</b><i>♠&#xFE0E;</i></div><h2>주제는 크게 세 갈래로 나뉜다</h2></div>
+  <div class="sheet branches">
+    <table>
+      <tr><td>1</td><td>좋아하는 것</td><td>본인이 관심 있거나 좋아하는 것에서 출발한 글</td></tr>
+      <tr><td>2</td><td>하고 있는 일</td><td>본인이 하고 있는 일과 관련된 글</td></tr>
+      <tr><td>3</td><td>AI 시대와 인문학</td><td>AI화 되어 가는 세상에 인문학적 성찰을 녹인 글, 또는 인문학적 이야기에 AI화 되는 상황을 녹인 글</td></tr>
+    </table>
+  </div>
+  <p class="foot">주제의 세 갈래</p>
+  <aside class="notes">지금까지의 주제를 모아 보면 크게 세 갈래로 보입니다. 좋아하는 것에서 출발한 글, 하고 있는 일과 관련된 글, 그리고 AI 시대와 인문학을 엮은 글입니다. 앞의 표에서 어느 글이 어디에 해당하는지 함께 짚어 보겠습니다.</aside>
+</section>
+
+<!-- 6 나의 주제 -->
+<section>
+  <div class="head"><div class="chip"><b>3</b><i>♠&#xFE0E;</i></div><h2>나의 주제는 두 갈래에 걸쳐 있다</h2></div>
+  <div class="mine">
+    <div class="sheet">
+      <p class="n">갈래 1, 좋아하는 것</p>
+      <h3>융합인문공학으로 탐구하는 마술의 과학</h3>
+      <p>20년 넘게 해 온 마술에서 출발했다.</p>
+    </div>
+    <div class="sheet">
+      <p class="n">갈래 3, AI 시대와 인문학</p>
+      <h3>AI 페르소나를 활용한 심리적 포싱 실험과 멘탈 매직의 의미</h3>
+      <p>AI로 실험하고, AI 시대에 마술이 지니는 의미를 물었다.</p>
+    </div>
+  </div>
+  <p class="also">갈래 2와도 닿아 있다. 정보기술 분야에서 대규모 언어 모델을 써 온 실무가 실험의 바탕이 되었다.</p>
+  <p class="foot">주제의 세 갈래</p>
+  <aside class="notes">제 에세이의 제목을 둘로 나누면 앞부분은 좋아하는 것, 뒷부분은 AI 시대와 인문학입니다. 직장에서 언어 모델을 다뤄 온 경험도 실험에 쓰였으니 세 갈래가 조금씩 다 들어 있습니다. 이제 이 주제가 학기마다 어떻게 만들어졌는지 말씀드리겠습니다.</aside>
+</section>
+
+<!-- 7 타임라인 -->
+<section>
+  <div class="head"><h2>세 학기를 한눈에 보면</h2></div>
+  <div class="line">
+    <div class="stop">
+      <div class="dot">2학기</div>
+      <h3>주제를 잡다</h3>
+      <p class="what">발표 「마술과 과학」</p>
+      <p class="say">관심사와 에세이를 연결하고, 전공세미나의 뇌과학 수업과 이어 보려 했다.</p>
+    </div>
+    <div class="stop">
+      <div class="dot">3학기</div>
+      <h3>실험으로 만들다</h3>
+      <p class="what">발표 두 번: <span style="white-space:nowrap">chae-ACAAN</span>, <span style="white-space:nowrap">A-PMFS</span></p>
+      <p class="say">뇌과학과 심리학, 공학적 마술의 효과를 접목해 실험 프로젝트를 구현했다.</p>
+    </div>
+    <div class="stop">
+      <div class="dot">4학기</div>
+      <h3>글로 완성하다</h3>
+      <p class="what">졸업 에세이</p>
+      <p class="say">내용을 채우고 그동안의 작업을 정리해 한 편의 글로 썼다.</p>
+    </div>
+  </div>
+  <p class="foot">나의 세 학기</p>
+  <aside class="notes">2학기에는 주제를 잡는 데 집중했고, 3학기에는 그것을 실험 프로젝트로 구현했고, 4학기에는 글로 옮겼습니다. 학기마다 한 일이 달랐고, 앞 학기의 결과가 다음 학기의 재료가 되었습니다.</aside>
+</section>
+
+<!-- 8 2학기: 내가 좋아해서 -->
+<section>
+  <div class="head"><div class="chip red"><b>2</b><i>♦&#xFE0E;</i></div><h2>주제 선정 이유는 한 줄이었다</h2></div>
+  <p class="because">“내가 좋아해서”</p>
+  <div class="years">
+    <div><b>2003</b>군 복무 중 마술 입문서 한 권으로 시작</div>
+    <div><b>2004</b>대학 마술 동호회 활동</div>
+    <div><b>2005</b>대학 마술 동호회 회장</div>
+  </div>
+  <p class="foot">2학기, 주제 잡기</p>
+  <aside class="notes">2학기 발표 자료의 주제 선정 이유에는 "내가 좋아해서"라고 적었습니다. 군 복무 중에 우연히 마술 책 한 권을 보고 시작해 20년 넘게 이어 온 취미입니다. 오래 붙들 수 있는 주제는 결국 좋아하는 것이었습니다.</aside>
+</section>
+
+<!-- 9 2학기: 142,857 -->
+<section>
+  <div class="head"><div class="chip red"><b>2</b><i>♦&#xFE0E;</i></div><h2>좋아하는 것을 전공의 말로 옮기다</h2></div>
+  <div class="cyc">
+    <svg viewBox="0 0 420 420" role="img" aria-label="1, 4, 2, 8, 5, 7이 고리를 이루는 순환수 142,857">
+      <circle cx="210" cy="210" r="150" fill="none" stroke="#c8a45a" stroke-width="2"/>
+      <g font-family="Noto Serif KR, serif" font-weight="900" font-size="46" text-anchor="middle" dominant-baseline="central">
+        <g fill="#082a20"><circle cx="210" cy="60" r="36" fill="#f5efdf"/><circle cx="340" cy="135" r="36" fill="#f5efdf"/><circle cx="340" cy="285" r="36" fill="#f5efdf"/><circle cx="210" cy="360" r="36" fill="#f5efdf"/><circle cx="80" cy="285" r="36" fill="#f5efdf"/><circle cx="80" cy="135" r="36" fill="#f5efdf"/></g>
+        <g fill="#1b1612"><text x="210" y="60">1</text><text x="340" y="135">4</text><text x="340" y="285">2</text><text x="210" y="360">8</text><text x="80" y="285">5</text><text x="80" y="135">7</text></g>
+      </g>
+      <text x="210" y="196" text-anchor="middle" font-family="Noto Serif KR, serif" font-weight="900" font-size="40" fill="#f5efdf">142,857</text>
+      <text x="210" y="238" text-anchor="middle" font-family="IBM Plex Sans KR, sans-serif" font-size="21" fill="#cfd8cc">1부터 6까지 곱해도</text>
+      <text x="210" y="266" text-anchor="middle" font-family="IBM Plex Sans KR, sans-serif" font-size="21" fill="#cfd8cc">같은 고리를 돈다</text>
+    </svg>
+    <div>
+      <p class="lead">발표에서 순환수 142,857 마술을 시연했다. 계산은 수학이 맡고, 놀라움은 연출이 맡는다.</p>
+      <div class="pair">
+        <div><b>인문학</b>관객의 심리, 감성, 믿음을 다룬다. 설득과 미스디렉션.</div>
+        <div><b>공학</b>물리, 화학, 수학의 원리와 정교한 도구로 효과를 구현한다.</div>
+      </div>
+    </div>
+  </div>
+  <p class="foot">2학기, 주제 잡기</p>
+  <aside class="notes">좋아한다는 것만으로는 에세이가 되지 않아서, 마술을 전공의 말로 옮겨 보았습니다. 142,857 마술은 결과의 정확성은 수학이 보장하고, 그것을 불가능해 보이게 만드는 것은 연출입니다. 한 번의 시연 안에 인문학과 공학이 함께 있다는 것을 보여 주려 했습니다.</aside>
+</section>
+
+<!-- 10 2학기: 뇌과학 -->
+<section>
+  <div class="head"><div class="chip red"><b>2</b><i>♦&#xFE0E;</i></div><h2>전공세미나의 뇌과학 수업과 잇다</h2></div>
+  <div class="four">
+    <div><b>착시</b><span>뇌는 본 것을 그대로 복사하지 않고 해석한다</span></div>
+    <div><b>주의 집중 조절</b><span>한 곳에 집중하면 다른 정보를 놓친다</span></div>
+    <div><b>기억의 오류</b><span>기억은 저장이 아니라 재구성이다</span></div>
+    <div><b>기대와 가정</b><span>패턴을 보여 준 뒤 깨뜨리면 놀란다</span></div>
+  </div>
+  <div class="study">
+    <p class="tag">마술을 볼 때의 뇌</p>
+    <p>일반 참가자 25명과 마술사 1명에게 마술 영상을 보여 주며 fMRI로 측정한 연구를 소개했다. 마술 영상에서 꼬리핵의 활성이 두드러졌고, 발표에서는 이를 마술적 현상에 대한 기대감으로 설명했다.<br><span class="small dim">Danek 등(2015), Frontiers in Psychology</span></p>
+  </div>
+  <p class="foot">2학기, 주제 잡기</p>
+  <aside class="notes">그 학기 전공세미나에서 뇌과학 수업을 들었고, 그것을 마술과 연결해 보려 했습니다. 트릭이 통하는 이유를 네 가지 인지 원리로 정리했고, 마술을 볼 때의 뇌를 측정한 연구를 소개했습니다. 다만 마술사는 한 명뿐이어서 일반화할 수 없다는 점은 에세이에서 보완했습니다.</aside>
+</section>
+
+<!-- 11 2학기: 숙제 -->
+<section>
+  <div class="head"><div class="chip red"><b>2</b><i>♦&#xFE0E;</i></div><h2>2학기 마지막 장에 적어 둔 숙제</h2></div>
+  <ul class="todo">
+    <li>융합인문공학 수업에서 배우는 것 가운데 마술적 사고로 발전시킬 부분 찾기<span>3학기의 실험이 되었다</span></li>
+    <li>인문학의 눈으로 본 마술의 감정, 긍정적 효과와 부정적 효과<span>에세이 7장과 8장이 되었다</span></li>
+    <li>마술과 함께한 인생의 장점과 단점<span>에세이 서론과 결론에 담았다</span></li>
+  </ul>
+  <p class="foot">2학기, 주제 잡기</p>
+  <aside class="notes">2학기 발표의 마지막 장에는 향후 연구 목표 세 가지를 적었습니다. 그때는 막연했는데, 지금 보면 세 가지가 각각 3학기의 실험과 에세이의 뒷부분, 그리고 서론과 결론으로 이어졌습니다. 발표 끝에 숙제를 적어 두는 것이 다음 학기의 출발점이 되었습니다.</aside>
+</section>
+
+<!-- 12 3학기: 질문을 실험으로 -->
+<section>
+  <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>질문을 실험으로 바꾸다</h2></div>
+  <div class="defs">
+    <div><b>ACAAN</b>관객이 카드 한 장과 숫자 하나를 말하면, 손대지 않은 덱의 그 순서에서 그 카드가 나오는 효과</div>
+    <div><b>심리적 포싱</b>자유롭게 골랐다고 느끼게 하면서 말과 암시로 의도한 선택으로 이끄는 기법</div>
+  </div>
+  <div class="sheet ask">말만으로 카드 선택을 움직일 수 있을까?<br>사람에게 묻기 전에 AI 페르소나에게 먼저 물어보자.</div>
+  <p class="foot">3학기, 실험</p>
+  <aside class="notes">3학기에는 공연에서 느껴 온 것을 실험할 수 있는 질문으로 바꿨습니다. 관객에게 카드 한 장을 떠올려 보라고 하면 특정 카드가 자주 나온다는 인상이 있었습니다. 그렇다면 말로 그 선택을 움직일 수 있는지, 언어 모델로 만든 가상의 관객에게 먼저 시험해 보기로 했습니다.</aside>
+</section>
+
+<!-- 13 3학기: chae-ACAAN -->
+<section>
+  <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>1차 chae-ACAAN: 너무 좋은 결과</h2></div>
+  <div class="seven">
+    <div class="pc red" aria-hidden="true"><div class="idx"><b>7</b><i>♥&#xFE0E;</i></div><div class="face"><span>♥&#xFE0E;</span></div><div class="idx btm"><b>7</b><i>♥&#xFE0E;</i></div></div>
+    <div>
+      <p class="big">97.8%<small>가 하트 7</small></p>
+      <p class="dim" style="margin-top:16px;font-size:30px">배치 응답 52,000건의 결과</p>
+      <ul class="but">
+        <li class="fragment">비교할 통제 조건이 없었다</li>
+        <li class="fragment">응답 형식 예시에 하트 7이 들어 있었다</li>
+      </ul>
+    </div>
+  </div>
+  <p class="foot">3학기, 실험</p>
+  <aside class="notes">1차 발표에서는 52,000건의 응답 가운데 97.8퍼센트가 하트 7이었습니다. 처음에는 사람들이 7을 자주 고른다는 선행 연구와 맞는 결과라고 해석했습니다. 그런데 비교할 통제 조건이 없었고, 응답 형식을 알려 주는 예시에 하트 7이 들어 있었습니다. 두 번째 문제는 에세이를 쓰면서 발견했습니다.</aside>
+</section>
+
+<!-- 14 3학기: A-PMFS -->
+<section>
+  <div class="head" style="margin-bottom:26px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>2차 A-PMFS: 조건을 나누어 다시 묻다</h2></div>
+  <div class="bars" role="img" aria-label="조건별 목표 카드 적중률 막대그래프">
+    <div class="k">통제<small>키워드 없음</small></div><div><div class="bar ctl" style="width:22%"></div></div><div class="v">0.60%</div>
+    <div class="k">목표 키워드 5개</div><div><div class="bar" style="width:69.6%"></div></div><div class="v">1.90%</div>
+    <div class="k">목표 키워드 10개</div><div><div class="bar" style="width:81.7%"></div></div><div class="v">2.23%</div>
+    <div class="k">목표 키워드 15개</div><div><div class="bar hit" style="width:100%"></div></div><div class="v">2.73%</div>
+    <div class="k">위약<small>다른 카드의 키워드</small></div><div><div class="bar ctl" style="width:33%"></div></div><div class="v">0.90%</div>
+  </div>
+  <div class="verdict">
+    <div>다섯 조건, 15,000회. 통제와 키워드 15개 조건의 차이는 <strong>2.13%p</strong>였다.</div>
+    <div>차이는 있었지만 실제 공연에 안정적으로 쓸 수준에는 이르지 못했다.</div>
+  </div>
+  <p class="foot">3학기, 실험</p>
+  <aside class="notes">2차 발표에서는 설계를 고쳤습니다. 아무 키워드도 주지 않는 통제 조건, 키워드 수를 달리한 세 조건, 다른 카드의 키워드를 주는 위약 조건을 두고 15,000회를 돌렸습니다. 목표 카드의 적중률은 0.60퍼센트에서 2.73퍼센트로 올랐지만, 공연에 쓸 만한 크기는 아니었습니다. 자세한 방법은 3학기 발표 자료에 있습니다.</aside>
+</section>
+
+<!-- 15 3학기: 반복 -->
+<section>
+  <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>3학기에 실제로 한 일</h2></div>
+  <div class="loop">
+    <div class="sheet"><h3>만든다</h3><p>가상의 관객을 만들고, 카드 응답을 모으는 시스템을 구현했다.</p></div>
+    <div class="arr" aria-hidden="true">▶</div>
+    <div class="sheet"><h3>틀린 곳을 찾는다</h3><p>결과가 좋을수록 설계를 먼저 의심했다. 통제 조건이 빠져 있었다.</p></div>
+    <div class="arr" aria-hidden="true">▶</div>
+    <div class="sheet"><h3>다시 설계한다</h3><p>조건을 나누고 성공 기준을 미리 정한 뒤 다시 실행했다.</p></div>
+  </div>
+  <p class="links">
+    <span>3학기 1차 발표</span><a href="https://wukong-daima.github.io/chae-acaan-presentation/presentation/" target="_blank" rel="noopener">wukong-daima.github.io/chae-acaan-presentation</a><br>
+    <span>3학기 2차 발표</span><a href="https://wukong-daima.github.io/A-PMFS-presentation/" target="_blank" rel="noopener">wukong-daima.github.io/A-PMFS-presentation</a>
+  </p>
+  <p class="foot">3학기, 실험</p>
+  <aside class="notes">돌아보면 3학기에 한 일은 만들고, 틀린 곳을 찾고, 다시 설계하는 일의 반복이었습니다. 한 학기에 발표가 두 번 있었던 것이 도움이 되었습니다. 1차의 한계가 2차의 설계가 되었기 때문입니다. 두 발표 자료는 링크로 남겨 두었습니다.</aside>
+</section>
+
+<!-- 16 4학기: 여덟 장 -->
+<section>
+  <div class="head" style="margin-bottom:24px"><div class="chip red"><b>4</b><i>♥&#xFE0E;</i></div><h2>발표 세 번이 여덟 장이 되기까지</h2></div>
+  <div class="chap">
+    <div><b>1장</b>마술의 본질<em class="s2">2학기 발표</em></div>
+    <div><b>5장</b>AI 시뮬레이션 I: chae-ACAAN<em class="s3">3학기 1차</em></div>
+    <div><b>2장</b>마술의 동서양 역사<em class="new">새로 씀</em></div>
+    <div><b>6장</b>AI 시뮬레이션 II: A-PMFS<em class="s3">3학기 2차</em></div>
+    <div><b>3장</b>마술과 뇌과학<em class="s2">2학기 발표</em></div>
+    <div><b>7장</b>AI 시대 멘탈 매직의 의미<em class="new">새로 씀</em></div>
+    <div><b>4장</b>멘탈 매직과 심리적 포싱<em class="s3">3학기 1차</em></div>
+    <div><b>8장</b>마술의 사회적 응용<em class="new">새로 씀</em></div>
+  </div>
+  <p class="legend">여덟 장 가운데 다섯 장은 지난 발표를 넓힌 것이고, 세 장은 4학기에 새로 썼다.</p>
+  <p class="foot">4학기, 글</p>
+  <aside class="notes">4학기에 목차를 짤 때, 지난 세 번의 발표를 먼저 장으로 놓았습니다. 2학기 발표는 1장과 3장이 되었고, 3학기 1차 발표는 4장과 5장, 2차 발표는 6장이 되었습니다. 그러고 나니 비어 있는 자리가 보였고, 그것이 새로 쓴 세 장입니다.</aside>
+</section>
+
+<!-- 17 4학기: 새로 채운 장 -->
+<section>
+  <div class="head"><div class="chip red"><b>4</b><i>♥&#xFE0E;</i></div><h2>빈자리를 채운 세 장</h2></div>
+  <div class="newch">
+    <div class="sheet"><p class="no">2장</p><h3>마술의 동서양 역사</h3><p>마술의 원리를 밝힌 기록들을 합리적 설명과 성찰이라는 관점에서 읽었다.</p></div>
+    <div class="sheet"><p class="no">7장</p><h3>AI 시대 멘탈 매직의 의미</h3><p>적중률과 함께 볼 기준을 제안했다. 실시간 적응, 열린 결말, 공동 창조, 불확실성을 드러내는 방식.</p></div>
+    <div class="sheet"><p class="no">8장</p><h3>마술의 사회적 응용</h3><p>재활, 교육, 봉사의 사례를 살피고 활동의 목적에 맞는 검증이 필요함을 정리했다.</p></div>
+  </div>
+  <p class="lead" style="margin-top:46px;font-size:29px;max-width:none">발표는 "무엇을 했는가"였고, 에세이는 "그래서 무엇을 뜻하는가"까지 써야 했다.</p>
+  <p class="foot">4학기, 글</p>
+  <aside class="notes">새로 쓴 세 장은 역사, AI 시대의 의미, 사회적 응용입니다. 발표에서는 무엇을 했는지를 말하면 되었지만, 에세이에서는 그것이 무엇을 뜻하는지까지 써야 했습니다. 그래서 인문학 쪽의 내용을 4학기에 가장 많이 채웠습니다.</aside>
+</section>
+
+<!-- 18 4학기: 고친 것 -->
+<section>
+  <div class="head" style="margin-bottom:24px"><div class="chip red"><b>4</b><i>♥&#xFE0E;</i></div><h2>글로 옮기며 고쳐 쓴 것</h2></div>
+  <div class="sheet fix">
+    <table>
+      <tr><th>발표 때의 해석</th><th>에세이의 서술</th></tr>
+      <tr><td>하트 7이 97.8%. 사람들이 7을 자주 고른다는 연구와 맞는다.</td><td>통제 조건이 없고 응답 예시에 하트 7이 있었으므로 선행 연구의 재현으로 볼 수 없다.</td></tr>
+      <tr><td>적중률이 약 4.6배 올랐다.</td><td>차이는 2.13%p다. 4.6배는 통제 조건의 값이 작아서 커 보이는 비율이다.</td></tr>
+      <tr><td>키워드 프라이밍의 효과를 확인했다.</td><td>이 모델과 이 설계에서 관찰한 차이다. 사람 관객에게도 나타나는지는 확인하지 못했다.</td></tr>
+    </table>
+  </div>
+  <p class="foot">4학기, 글</p>
+  <aside class="notes">글로 옮기는 일은 정리만이 아니었습니다. 발표 때 했던 해석을 다시 읽으면서 고쳐 쓴 곳이 많았습니다. 하트 7의 결과는 재현이라고 할 수 없다고 고쳤고, 4.6배라는 표현은 2.13퍼센트포인트 차이로 낮춰 썼고, 효과를 확인했다는 말은 관찰한 범위로 좁혔습니다.</aside>
+</section>
+
+<!-- 19 4학기: 결론 -->
+<section>
+  <div class="head"><div class="chip red"><b>4</b><i>♥&#xFE0E;</i></div><h2>에세이가 도착한 곳</h2></div>
+  <p class="final">15,000회의 시뮬레이션에는 카드의 적중 여부가 남았지만, 그 순간 관객이 무엇을 경험했는지에 대한 기록은 없었다.</p>
+  <p class="final-sub">카드 선택의 쏠림은 AI로 미리 탐색해 볼 수 있어도, 그 선택이 만드는 경험은 관객의 반응으로만 평가할 수 있다.</p>
+  <p class="foot">4학기, 글</p>
+  <aside class="notes">에세이의 결론은 이 문장입니다. 실험에는 적중했는지 여부만 남았고, 관객이 무엇을 경험했는지는 남지 않았습니다. 공학으로 잴 수 있는 것과 인문학이 묻는 것이 다르다는 점을, 제 실험이 스스로 보여 준 셈입니다.</aside>
+</section>
+
+<!-- 20 회고 -->
+<section>
+  <div class="head"><div class="chip"><b>A</b><i>♠&#xFE0E;</i></div><h2>대학원에서 얻은 것</h2></div>
+  <div class="got">
+    <div><b>질문이 바뀌었다</b><p>"어떻게 신기하게 보일까"에서 "마술의 가치를 어떻게 설명할 수 있을까"로.</p></div>
+    <div><b>직관을 가설로 옮기는 법</b><p>공연에서 받은 인상을 조건과 수치로 검증할 수 있는 문장으로 바꾸었다.</p></div>
+    <div><b>결과를 의심하는 법</b><p>결과를 얻는 일만큼, 그 결과를 의심하고 해석을 고치는 일이 중요했다.</p></div>
+    <div><b>측정되지 않는 것</b><p>오래 소중히 여겨 온 것은 눈앞의 사람과 함께 만드는 경험이었다.</p></div>
+  </div>
+  <p class="foot">회고</p>
+  <aside class="notes">대학원에서 얻은 것을 네 가지로 정리했습니다. 질문이 바뀌었고, 직관을 가설로 옮기는 법과 결과를 의심하는 법을 배웠고, 측정되지 않는 것이 무엇인지 알게 되었습니다. (여기에 직장과 병행한 경험, 동기들과의 이야기를 덧붙입니다.)</aside>
+</section>
+
+<!-- 21 피드 페이지 -->
+<section>
+  <div class="head"><div class="chip"><b>A</b><i>♠&#xFE0E;</i></div><h2>배운 것으로 만든 것: 피드 페이지</h2></div>
+  <div class="demo">
+    <div>
+      <p class="lead">대학원에서 얻은 공학 지식으로 직접 개발한 피드 페이지를 화면에 띄워 보여 드립니다.</p>
+      <p class="url"><a href="https://enrage-skyward-unicorn.ngrok-free.dev/diary/#/feed" target="_blank" rel="noopener">enrage-skyward-unicorn.ngrok-free.dev/diary</a><br><span class="dim">로그인이 필요한 개인 페이지라 발표자 화면에서 시연합니다.</span></p>
+    </div>
+    <div class="screen" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="body">직접 시연</div></div>
+  </div>
+  <p class="foot">회고</p>
+  <aside class="notes">마지막으로, 대학원에서 배운 공학 지식으로 제가 직접 만든 피드 페이지를 보여 드리겠습니다. 화면을 바꿔서 시연하겠습니다. (무엇을 하는 페이지인지, 어떤 기술과 AI 도구를 썼는지 설명합니다.)</aside>
+</section>
+
+<!-- 22 요약 -->
+<section>
+  <div class="head"><div class="chip"><b>A</b><i>♠&#xFE0E;</i></div><h2>에세이를 앞둔 분들께</h2></div>
+  <ol class="three">
+    <li><div><b>좋아하는 것에서 주제를 잡는다</b><span>네 학기를 붙들 수 있는 주제여야 한다.</span></div></li>
+    <li><div><b>학기마다의 발표를 에세이의 한 장으로 쌓는다</b><span>발표 끝에 적은 숙제가 다음 학기의 출발점이 된다.</span></div></li>
+    <li><div><b>글로 옮길 때 지난 결과를 다시 의심한다</b><span>고쳐 쓴 자리가 에세이에서 가장 할 말이 많은 자리였다.</span></div></li>
+  </ol>
+  <p class="foot">회고</p>
+  <aside class="notes">정리하면 세 가지입니다. 좋아하는 것에서 주제를 잡으시고, 학기마다의 발표를 에세이의 한 장이라고 생각하고 쌓으시고, 글로 옮길 때는 지난 결과를 다시 의심해 보시기 바랍니다. 제 경우에는 그렇게 해서 한 편의 글이 되었습니다.</aside>
+</section>
+
+<!-- 23 끝 -->
+<section class="end">
+  <h2>감사합니다</h2>
+  <p>질문과 의견을 기다립니다.</p>
+  <p class="links">
+    <span>3학기 1차 발표</span><a href="https://wukong-daima.github.io/chae-acaan-presentation/presentation/" target="_blank" rel="noopener">wukong-daima.github.io/chae-acaan-presentation</a><br>
+    <span>3학기 2차 발표</span><a href="https://wukong-daima.github.io/A-PMFS-presentation/" target="_blank" rel="noopener">wukong-daima.github.io/A-PMFS-presentation</a>
+  </p>
+  <aside class="notes">들어 주셔서 감사합니다. 질문이나 의견을 주시면 답변드리겠습니다.</aside>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+Reveal.initialize({
+  width: 1280,
+  height: 720,
+  margin: 0,
+  center: false,
+  hash: true,
+  fragments: !location.search.includes("nofrag"),
+  slideNumber: "c/t",
+  transition: "fade",
+  transitionSpeed: "fast",
+  plugins: [RevealNotes]
+});
+</script>
+</body>
+</html>
