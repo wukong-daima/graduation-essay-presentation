@@ -6,7 +6,7 @@
 <title>졸업 에세이를 어떻게 쓰게 되었나 | 융합인문공학 19기 손재완</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Gowun+Batang:wght@400;700&family=Archivo+Black&family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Gowun+Batang:wght@400;700&family=Archivo+Black&family=Black+Han+Sans&family=Gothic+A1:wght@300;500;700;800;900&family=Archivo:wght@800&family=Anton&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
 <style>
@@ -512,6 +512,127 @@ html[data-theme="poster"] .screen .bar { border-bottom-width: 4px; }
   html[data-theme="paper"] .btn:hover:not(:disabled) { background: var(--red); border-color: var(--red); color: #fff; }
   html[data-theme="poster"] .btn:hover:not(:disabled) { background: #111; color: #fff; }
 }
+
+/* ===== 시안 E: 베이지와 네이비 ===== */
+html[data-theme="navy"] {
+  --felt: #efe9dc; --felt-deep: #e6decd; --felt-line: #c8bfa9; --ivory: #1f2a6b; --ivory-dim: #5b6288; --ink: #1f2a6b; --red: #c8323c; --brass: #1f2a6b;
+  --serif: "Archivo", "Gothic A1", "Apple SD Gothic Neo", sans-serif; --sans: "Gothic A1", "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+}
+html[data-theme="navy"], html[data-theme="navy"] body { background: #e6decd; }
+html[data-theme="navy"] .reveal-viewport { background: linear-gradient(90deg, #1f2a6b 0 26px, transparent 26px), #efe9dc; }
+html[data-theme="navy"] .reveal-viewport::after { background: none; }
+html[data-theme="navy"] .reveal .slides > section::before { color: rgba(31, 42, 107, .055); }
+html[data-theme="navy"] .reveal { font-weight: 500; }
+html[data-theme="navy"] .reveal h1, html[data-theme="navy"] .reveal h2, html[data-theme="navy"] .reveal h3, html[data-theme="navy"] .reveal b { font-weight: 800; letter-spacing: -0.025em; }
+html[data-theme="navy"] .reveal strong { color: var(--red); }
+html[data-theme="navy"] .sheet, html[data-theme="navy"] .four div { background: #fbf8f1; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 18px; box-shadow: none; }
+html[data-theme="navy"] .chip { background: var(--ink); color: #efe9dc; border-radius: 14px; box-shadow: none; }
+html[data-theme="navy"] .chip.red { color: #ff9aa2; }
+html[data-theme="navy"] .pc { background: #fbf8f1; color: var(--ink); border: 1.5px solid var(--ink); box-shadow: 0 .9em 1.5em rgba(31, 42, 107, .2); }
+html[data-theme="navy"] .pc.red { color: var(--red); }
+html[data-theme="navy"] .stop .dot { background: #efe9dc; color: var(--ink); border: 1.5px solid var(--ink); box-shadow: none; }
+html[data-theme="navy"] .die { background: #fbf8f1; border: 1.5px solid var(--ink); box-shadow: none; }
+html[data-theme="navy"] .die.on { background: var(--ink); }
+html[data-theme="navy"] .die.on i { background: #efe9dc; }
+html[data-theme="navy"] .bars .bar { background: #b4b9d6; border-radius: 999px; }
+html[data-theme="navy"] .bars .bar.ctl { background: #d2cab7; }
+html[data-theme="navy"] .bars .bar.hit { background: var(--ink); }
+html[data-theme="navy"] .but li { background: rgba(31, 42, 107, .06); border-radius: 0 12px 12px 0; }
+html[data-theme="navy"] .chap em.s2 { background: transparent; border: 1.5px solid var(--red); color: var(--red); }
+html[data-theme="navy"] .chap em.s3 { background: transparent; border: 1.5px solid var(--ink); color: var(--ink); }
+html[data-theme="navy"] .chap em.new { background: var(--ink); color: #efe9dc; }
+html[data-theme="navy"] .btn { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+html[data-theme="navy"] .cyc svg > circle { stroke: #1f2a6b; }
+html[data-theme="navy"] .cyc svg g g:first-child circle { fill: #fbf8f1; stroke: #1f2a6b; stroke-width: 1.5; }
+html[data-theme="navy"] .cyc svg g g + g text, html[data-theme="navy"] .cyc svg > text { fill: #1f2a6b; }
+html[data-theme="navy"] .cyc svg > text + text, html[data-theme="navy"] .cyc svg > text + text + text { fill: #5b6288; }
+
+/* ===== 시안 F: 그라데이션 ===== */
+html[data-theme="glow"] {
+  --felt: #07080c; --felt-deep: #050609; --felt-line: rgba(255, 255, 255, .16); --ivory: #f4f5f7; --ivory-dim: #a6abb8; --ink: #0b0c12; --red: #c8323c; --brass: #ff9b54;
+  --serif: "Gothic A1", "Apple SD Gothic Neo", sans-serif; --sans: "Gothic A1", "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+}
+html[data-theme="glow"], html[data-theme="glow"] body { background: #050609; }
+html[data-theme="glow"] .reveal-viewport { background: #06070b; }
+html[data-theme="glow"] .reveal-viewport::after {
+  inset: -20%;
+  background:
+    radial-gradient(30% 26% at 60% 60%, rgba(40, 96, 255, .85) 0%, transparent 70%),
+    radial-gradient(22% 20% at 74% 52%, rgba(255, 138, 60, .78) 0%, transparent 70%),
+    radial-gradient(26% 22% at 42% 66%, rgba(20, 60, 190, .6) 0%, transparent 70%);
+  filter: blur(30px); animation: drift 22s ease-in-out infinite alternate;
+}
+@keyframes drift { from { transform: translate(-4%, 2%) rotate(-4deg); } to { transform: translate(5%, -4%) rotate(5deg); } }
+html[data-theme="glow"] .reveal .slides > section::before { color: rgba(255, 255, 255, .03); }
+html[data-theme="glow"] .reveal h1, html[data-theme="glow"] .dv h2, html[data-theme="glow"] .because, html[data-theme="glow"] .final, html[data-theme="glow"] .big { font-weight: 300; letter-spacing: -0.03em; }
+html[data-theme="glow"] .reveal h2, html[data-theme="glow"] .reveal h3, html[data-theme="glow"] .reveal b { font-weight: 500; letter-spacing: -0.02em; }
+html[data-theme="glow"] .dv h2 { font-weight: 300; }
+html[data-theme="glow"] .sheet, html[data-theme="glow"] .four div {
+  background: rgba(255, 255, 255, .07); color: var(--ivory); border: 1px solid rgba(255, 255, 255, .2); border-radius: 22px; box-shadow: none;
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+html[data-theme="glow"] .sheet strong { color: #fff; }
+html[data-theme="glow"] .mine p, html[data-theme="glow"] .newch p, html[data-theme="glow"] .loop p, html[data-theme="glow"] .four span, html[data-theme="glow"] .fix td:first-child, html[data-theme="glow"] .fix th, html[data-theme="glow"] .topics .tbd, html[data-theme="glow"] .quote cite { color: var(--ivory-dim); }
+html[data-theme="glow"] .topics td, html[data-theme="glow"] .branches td, html[data-theme="glow"] .fix td { border-bottom-color: rgba(255, 255, 255, .13) !important; }
+html[data-theme="glow"] .fix th { border-bottom-color: rgba(255, 255, 255, .5) !important; }
+html[data-theme="glow"] .topics tr.me td, html[data-theme="glow"] .branches td:nth-child(1), html[data-theme="glow"] .mine .n, html[data-theme="glow"] .newch .no { color: var(--brass); }
+html[data-theme="glow"] .chip { background: rgba(255, 255, 255, .1); color: var(--ivory); border: 1px solid rgba(255, 255, 255, .25); box-shadow: none; border-radius: 14px; }
+html[data-theme="glow"] .chip.red { color: #ff9a9a; }
+html[data-theme="glow"] .stop .dot { background: rgba(255, 255, 255, .1); color: var(--ivory); border: 1px solid rgba(255, 255, 255, .3); box-shadow: none; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+html[data-theme="glow"] .line::before { background: linear-gradient(90deg, #3b6cff, #ff9b54); }
+html[data-theme="glow"] .bars .bar { background: rgba(255, 255, 255, .38); border-radius: 999px; }
+html[data-theme="glow"] .bars .bar.ctl { background: rgba(255, 255, 255, .17); }
+html[data-theme="glow"] .bars .bar.hit { background: linear-gradient(90deg, #3b6cff, #ff9b54); }
+html[data-theme="glow"] .but li { background: rgba(255, 255, 255, .06); border-left-color: var(--brass); border-radius: 0 12px 12px 0; }
+html[data-theme="glow"] .chap em.s2, html[data-theme="glow"] .chap em.s3 { background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .3); color: var(--ivory); }
+html[data-theme="glow"] .btn { background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .35); }
+html[data-theme="glow"] .cyc svg > circle { stroke: #ff9b54; }
+
+/* ===== 시안 G: 버건디 ===== */
+html[data-theme="wine"] {
+  --felt: #5a0d1e; --felt-deep: #3f0713; --felt-line: #8c2d40; --ivory: #ffd0da; --ivory-dim: #e59cab; --ink: #4a0a18; --red: #b5122c; --brass: #ff8fa6;
+  --serif: "Anton", "Black Han Sans", "Apple SD Gothic Neo", sans-serif;
+}
+html[data-theme="wine"], html[data-theme="wine"] body { background: #3f0713; }
+html[data-theme="wine"] .reveal-viewport { background: radial-gradient(90% 80% at 30% 20%, #6a1226 0%, #5a0d1e 45%, #430815 100%); }
+html[data-theme="wine"] .reveal-viewport::after { background: none; }
+html[data-theme="wine"] .reveal .slides > section::before { color: rgba(255, 208, 218, .075); font-size: 760px; bottom: -240px; }
+html[data-theme="wine"] .reveal h1, html[data-theme="wine"] .reveal h2, html[data-theme="wine"] .reveal h3,
+html[data-theme="wine"] .reveal b, html[data-theme="wine"] .big, html[data-theme="wine"] .eq, html[data-theme="wine"] .because,
+html[data-theme="wine"] .final, html[data-theme="wine"] .asks li, html[data-theme="wine"] .ask, html[data-theme="wine"] .quote,
+html[data-theme="wine"] .bars .v, html[data-theme="wine"] .branches td, html[data-theme="wine"] .topics td:first-child,
+html[data-theme="wine"] .order li::before, html[data-theme="wine"] .three li::before, html[data-theme="wine"] .stop .dot,
+html[data-theme="wine"] .screen .body, html[data-theme="wine"] .study .tag, html[data-theme="wine"] .pc { font-weight: 400; }
+html[data-theme="wine"] .reveal h1, html[data-theme="wine"] .reveal h2, html[data-theme="wine"] .dv h2 { letter-spacing: .005em; }
+html[data-theme="wine"] .cover h1, html[data-theme="wine"] .dv h2, html[data-theme="wine"] .because, html[data-theme="wine"] .end h2 { text-shadow: 12px 12px 0 rgba(255, 208, 218, .13); }
+html[data-theme="wine"] .branches td:nth-child(3) { font-family: var(--sans); font-weight: 500; }
+html[data-theme="wine"] .quote { font-family: var(--sans); font-weight: 600; }
+html[data-theme="wine"] .reveal strong { color: #fff; }
+html[data-theme="wine"] .sheet, html[data-theme="wine"] .four div { background: #ffd0da; color: var(--ink); border-radius: 0; box-shadow: 9px 9px 0 #2b040d; }
+html[data-theme="wine"] .sheet strong { color: var(--ink); }
+html[data-theme="wine"] .topics td, html[data-theme="wine"] .branches td, html[data-theme="wine"] .fix td { border-bottom-color: rgba(74, 10, 24, .22) !important; }
+html[data-theme="wine"] .chip { background: #ffd0da; color: var(--ink); border-radius: 0; box-shadow: 5px 5px 0 #2b040d; }
+html[data-theme="wine"] .chip.red { color: var(--red); }
+html[data-theme="wine"] .pc { background: #fff6f8; }
+html[data-theme="wine"] .stop .dot { background: #ffd0da; color: var(--ink); box-shadow: 6px 6px 0 #2b040d; }
+html[data-theme="wine"] .die { background: #ffd0da; border-radius: 0; box-shadow: 4px 4px 0 #2b040d; }
+html[data-theme="wine"] .die.on { background: #fff; }
+html[data-theme="wine"] .bars .bar { background: #c9667b; border-radius: 0; }
+html[data-theme="wine"] .bars .bar.ctl { background: #8c2d40; }
+html[data-theme="wine"] .bars .bar.hit { background: #ffd0da; }
+html[data-theme="wine"] .but li { background: rgba(0, 0, 0, .22); border-left-color: #ff8fa6; border-left-width: 8px; }
+html[data-theme="wine"] .chap em { border-radius: 0; }
+html[data-theme="wine"] .chap em.s2 { background: #ffd0da; color: var(--red); }
+html[data-theme="wine"] .chap em.s3 { background: #ffd0da; color: var(--ink); }
+html[data-theme="wine"] .chap em.new { background: #fff; color: var(--ink); }
+html[data-theme="wine"] .btn { border-radius: 0; border-width: 3px; }
+html[data-theme="wine"] .cyc svg > circle { stroke: #ff8fa6; stroke-width: 3; }
+html[data-theme="wine"] .cyc svg g g:first-child circle { fill: #ffd0da; }
+html[data-theme="wine"] .cyc svg g g + g text { fill: #4a0a18; }
+html[data-theme="wine"] .cyc svg > text { fill: #ffd0da; }
+@media (hover: hover) and (pointer: fine) {
+  html[data-theme="navy"] .btn:hover:not(:disabled) { background: var(--ink); color: #efe9dc; }
+}
+@media (prefers-reduced-motion: reduce) { html[data-theme="glow"] .reveal-viewport::after { animation: none; } }
 </style>
 </head>
 <body>
@@ -944,7 +1065,7 @@ html[data-theme="poster"] .screen .bar { border-bottom-width: 4px; }
 <script>
 // 디자인 시안 전환: 주소의 ?theme= 또는 T 키
 (function () {
-  var THEMES = [["table", "A 카드 테이블"], ["paper", "B 종이와 잉크"], ["stage", "C 극장"], ["poster", "D 포스터"]];
+  var THEMES = [["table", "A 카드 테이블"], ["paper", "B 종이와 잉크"], ["stage", "C 극장"], ["poster", "D 포스터"], ["navy", "E 베이지와 네이비"], ["glow", "F 그라데이션"], ["wine", "G 버건디"]];
   var q = new URLSearchParams(location.search), cur = Math.max(0, THEMES.findIndex(function (t) { return t[0] === q.get("theme"); }));
   var tag = document.getElementById("themeTag"), timer;
   function apply(show) {
