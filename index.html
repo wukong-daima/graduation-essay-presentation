@@ -6,7 +6,7 @@
 <title>졸업 에세이를 어떻게 쓰게 되었나 | 융합인문공학 19기 손재완</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..900&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Gowun+Batang:wght@400;700&family=Archivo+Black&family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
 <style>
@@ -372,9 +372,150 @@ html, body { background: var(--felt-deep); }
   .tilt { transition: none; }
   .reveal .slides section, .reveal .fragment { transition: none !important; }
 }
+
+/* ===== 시안 전환 표시 ===== */
+#themeTag { position: fixed; left: 50%; top: 18px; transform: translateX(-50%); z-index: 50; padding: 8px 18px; border-radius: 999px;
+  font: 600 15px/1 var(--sans); background: rgba(0, 0, 0, .72); color: #fff; opacity: 0; transition: opacity .25s ease; pointer-events: none; }
+#themeTag.on { opacity: 1; }
+
+/* ===== 시안 B: 종이와 잉크 ===== */
+html[data-theme="paper"] {
+  --felt: #faf7f0; --felt-deep: #f1ecdf; --felt-line: #d6cdb9; --ivory: #1c1a17; --ivory-dim: #5d564b; --ink: #1c1a17; --red: #b3202a; --brass: #b3202a;
+  --serif: "Cormorant Garamond", "Noto Serif KR", "AppleMyungjo", serif; --sans: "Source Serif 4", "Noto Serif KR", "AppleMyungjo", serif;
+}
+html[data-theme="paper"], html[data-theme="paper"] body { background: #f1ecdf; }
+html[data-theme="paper"] .reveal-viewport {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .15  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #fbf8f2 0%, #f3eee2 100%);
+}
+html[data-theme="paper"] .reveal-viewport::after { background: radial-gradient(120% 100% at 50% 45%, transparent 62%, rgba(90, 70, 40, .16) 100%); }
+html[data-theme="paper"] .reveal .slides > section::before { color: rgba(179, 32, 42, .06); }
+html[data-theme="paper"] .reveal { font-weight: 400; }
+html[data-theme="paper"] .reveal h1, html[data-theme="paper"] .reveal h2, html[data-theme="paper"] .dv h2 { font-weight: 700; letter-spacing: -0.015em; }
+html[data-theme="paper"] .reveal strong { color: var(--red); }
+html[data-theme="paper"] .head { border-bottom: 1.5px solid var(--ink); padding-bottom: 18px; }
+html[data-theme="paper"] .sheet, html[data-theme="paper"] .four div, html[data-theme="paper"] .chip, html[data-theme="paper"] .stop .dot, html[data-theme="paper"] .die {
+  background: #fffdf8; color: var(--ink); border: 1.5px solid var(--ink); box-shadow: none; border-radius: 4px; }
+html[data-theme="paper"] .chip.red, html[data-theme="paper"] .pc.red { color: var(--red); }
+html[data-theme="paper"] .pc { background: #fffdf8; color: var(--ink); border: 1.5px solid var(--ink); box-shadow: 0 .9em 1.6em rgba(60, 45, 20, .22); }
+html[data-theme="paper"] .die.on { background: var(--red); border-color: var(--red); }
+html[data-theme="paper"] .die.on i { background: #fff; }
+html[data-theme="paper"] .but li { background: rgba(179, 32, 42, .07); }
+html[data-theme="paper"] .bars .bar { background: #cfc6b2; border-radius: 0; }
+html[data-theme="paper"] .bars .bar.ctl { background: #a59c89; }
+html[data-theme="paper"] .bars .bar.hit { background: var(--red); }
+html[data-theme="paper"] .chap em.s2 { background: transparent; border: 1.5px solid var(--red); color: var(--red); }
+html[data-theme="paper"] .chap em.s3 { background: transparent; border: 1.5px solid var(--ink); color: var(--ink); }
+html[data-theme="paper"] .chap em.new { background: var(--red); color: #fff; }
+html[data-theme="paper"] .btn { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 4px; }
+html[data-theme="paper"] .ctl .btn.ghost { color: var(--ivory-dim); }
+html[data-theme="paper"] .cyc svg > circle { stroke: var(--red); }
+html[data-theme="paper"] .cyc svg g g:first-child circle { fill: #fffdf8; stroke: #1c1a17; stroke-width: 1.5; }
+html[data-theme="paper"] .cyc svg > text { fill: #1c1a17; }
+html[data-theme="paper"] .cyc svg > text + text, html[data-theme="paper"] .cyc svg > text + text + text { fill: #5d564b; }
+html[data-theme="paper"] .final { font-style: italic; font-weight: 600; }
+html[data-theme="paper"] .because { font-style: italic; }
+
+/* ===== 시안 C: 극장 ===== */
+html[data-theme="stage"] {
+  --felt: #17110f; --felt-deep: #0c0908; --felt-line: #3b2d27; --ivory: #efe6d8; --ivory-dim: #ab9e8d; --ink: #17110f; --red: #a8232b; --brass: #d4a574;
+  --serif: "Cormorant Garamond", "Gowun Batang", "AppleMyungjo", serif;
+}
+html[data-theme="stage"], html[data-theme="stage"] body { background: #0c0908; }
+html[data-theme="stage"] .reveal-viewport {
+  background:
+    radial-gradient(38% 46% at 88% 12%, rgba(132, 24, 48, .55) 0%, transparent 70%),
+    radial-gradient(34% 40% at 6% 92%, rgba(212, 165, 116, .22) 0%, transparent 70%),
+    radial-gradient(30% 34% at 70% 96%, rgba(232, 180, 184, .12) 0%, transparent 70%),
+    conic-gradient(from 168deg at 34% -12%, transparent 0deg, rgba(255, 236, 200, .13) 12deg, transparent 26deg),
+    #0f0b0a;
+}
+html[data-theme="stage"] .reveal-viewport::after { background: radial-gradient(120% 100% at 50% 45%, transparent 50%, rgba(0, 0, 0, .6) 100%); }
+html[data-theme="stage"] .reveal .slides > section::before { color: rgba(212, 165, 116, .06); }
+html[data-theme="stage"] .reveal h1, html[data-theme="stage"] .reveal h2 { font-weight: 700; letter-spacing: 0; }
+html[data-theme="stage"] .page::before { content: ""; position: absolute; left: -34px; top: 6px; bottom: 30px; width: 1px; background: linear-gradient(180deg, var(--brass), transparent); }
+html[data-theme="stage"] .sheet, html[data-theme="stage"] .four div {
+  background: rgba(239, 230, 216, .055); color: var(--ivory); border: 1px solid rgba(212, 165, 116, .5); box-shadow: none; border-radius: 6px; }
+html[data-theme="stage"] .sheet strong { color: var(--ivory); }
+html[data-theme="stage"] .mine p, html[data-theme="stage"] .newch p, html[data-theme="stage"] .loop p, html[data-theme="stage"] .four span,
+html[data-theme="stage"] .fix td:first-child, html[data-theme="stage"] .fix th, html[data-theme="stage"] .topics .tbd, html[data-theme="stage"] .quote cite { color: var(--ivory-dim); }
+html[data-theme="stage"] .topics td, html[data-theme="stage"] .branches td, html[data-theme="stage"] .fix td { border-bottom-color: rgba(212, 165, 116, .22) !important; }
+html[data-theme="stage"] .fix th { border-bottom-color: var(--brass) !important; }
+html[data-theme="stage"] .topics tr.me td, html[data-theme="stage"] .branches td:nth-child(1), html[data-theme="stage"] .mine .n, html[data-theme="stage"] .newch .no { color: var(--brass); }
+html[data-theme="stage"] .chap em.s2, html[data-theme="stage"] .chap em.s3 { background: transparent; border: 1px solid var(--ivory-dim); color: var(--ivory); }
+html[data-theme="stage"] .chap em.s2 { border-color: #e8b4b8; color: #e8b4b8; }
+html[data-theme="stage"] .because, html[data-theme="stage"] .final { font-style: italic; font-weight: 600; }
+html[data-theme="stage"] .bars .bar { background: #6f6257; }
+html[data-theme="stage"] .bars .bar.ctl { background: #4a3f38; }
+html[data-theme="stage"] .bars .bar.hit { background: var(--brass); }
+html[data-theme="stage"] .reveal, html[data-theme="paper"] .reveal { font-variant-numeric: lining-nums; }
+html[data-theme="stage"] .but li { border-left-color: #e8b4b8; background: rgba(255, 255, 255, .04); }
+html[data-theme="stage"] .cyc svg g g:first-child circle { fill: #efe6d8; }
+html[data-theme="stage"] .cyc svg > circle { stroke: #d4a574; }
+
+/* ===== 시안 D: 포스터 ===== */
+html[data-theme="poster"] {
+  --felt: #ffffff; --felt-deep: #ffffff; --felt-line: #111111; --ivory: #111111; --ivory-dim: #555555; --ink: #111111; --red: #e10600; --brass: #e10600;
+  --serif: "Archivo Black", "Black Han Sans", "Apple SD Gothic Neo", sans-serif;
+}
+html[data-theme="poster"], html[data-theme="poster"] body { background: #fff; }
+html[data-theme="poster"] .reveal-viewport {
+  background:
+    linear-gradient(rgba(0, 0, 0, .055) 1px, transparent 1px) 0 0 / 100% 64px,
+    linear-gradient(90deg, rgba(0, 0, 0, .055) 1px, transparent 1px) 0 0 / 64px 100%,
+    #fff;
+}
+html[data-theme="poster"] .reveal-viewport::after { background: none; }
+html[data-theme="poster"] .reveal .slides > section::before { color: rgba(225, 6, 0, .09); }
+html[data-theme="poster"] .reveal { font-weight: 500; }
+html[data-theme="poster"] .reveal h1, html[data-theme="poster"] .reveal h2, html[data-theme="poster"] .reveal h3,
+html[data-theme="poster"] .reveal b, html[data-theme="poster"] .big, html[data-theme="poster"] .eq, html[data-theme="poster"] .because,
+html[data-theme="poster"] .final, html[data-theme="poster"] .asks li, html[data-theme="poster"] .ask, html[data-theme="poster"] .quote,
+html[data-theme="poster"] .bars .v, html[data-theme="poster"] .branches td, html[data-theme="poster"] .topics td:first-child,
+html[data-theme="poster"] .order li::before, html[data-theme="poster"] .three li::before, html[data-theme="poster"] .stop .dot,
+html[data-theme="poster"] .screen .body, html[data-theme="poster"] .study .tag, html[data-theme="poster"] .pc { font-weight: 400; }
+html[data-theme="poster"] .branches td:nth-child(3) { font-family: var(--sans); font-weight: 500; }
+html[data-theme="poster"] .quote { font-family: var(--sans); font-weight: 600; }
+html[data-theme="poster"] .reveal strong { color: var(--red); }
+html[data-theme="poster"] .head h2 { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 6px; text-underline-offset: 10px; }
+html[data-theme="poster"] .sheet, html[data-theme="poster"] .four div {
+  background: #fff; color: #111; border: 3px solid #111; border-radius: 0; box-shadow: 9px 9px 0 var(--red); }
+html[data-theme="poster"] .chip { background: #111; color: #fff; border-radius: 0; box-shadow: 5px 5px 0 var(--red); }
+html[data-theme="poster"] .chip.red { color: #ff4b40; }
+html[data-theme="poster"] .pc { background: #fff; color: #111; border: .3em solid #111; border-radius: .5em; box-shadow: .9em .9em 0 #111; }
+html[data-theme="poster"] .pc.red { color: var(--red); }
+html[data-theme="poster"] .stop .dot { background: #111; color: #fff; box-shadow: 6px 6px 0 var(--red); }
+html[data-theme="poster"] .line::before { background: #111; height: 3px; }
+html[data-theme="poster"] .die { background: #fff; border: 3px solid #111; border-radius: 0; box-shadow: 4px 4px 0 #111; padding: 5px; }
+html[data-theme="poster"] .die.on { background: var(--red); }
+html[data-theme="poster"] .die.on i { background: #fff; }
+html[data-theme="poster"] .bars .bar { background: #111; border-radius: 0; }
+html[data-theme="poster"] .bars .bar.ctl { background: #b9b9b9; }
+html[data-theme="poster"] .bars .bar.hit { background: var(--red); }
+html[data-theme="poster"] .but li { background: rgba(225, 6, 0, .08); border-left-width: 8px; }
+html[data-theme="poster"] .chap em { border-radius: 0; }
+html[data-theme="poster"] .chap em.s2 { background: var(--red); color: #fff; }
+html[data-theme="poster"] .chap em.s3 { background: #111; color: #fff; }
+html[data-theme="poster"] .chap em.new { background: #fff; color: #111; border: 2px solid #111; }
+html[data-theme="poster"] .btn { background: #fff; color: #111; border: 3px solid #111; border-radius: 0; }
+html[data-theme="poster"] .years div, html[data-theme="poster"] .pair div, html[data-theme="poster"] .defs div, html[data-theme="poster"] .verdict div, html[data-theme="poster"] .got div { border-top-width: 5px; border-top-color: #111; }
+html[data-theme="poster"] .order li, html[data-theme="poster"] .asks li, html[data-theme="poster"] .todo li, html[data-theme="poster"] .three li, html[data-theme="poster"] .chap div { border-bottom-width: 2px; }
+html[data-theme="poster"] .cyc svg > circle { stroke: #e10600; stroke-width: 4; }
+html[data-theme="poster"] .cyc svg g g:first-child circle { fill: #111; }
+html[data-theme="poster"] .cyc svg g g + g text { fill: #fff; }
+html[data-theme="poster"] .cyc svg > text { fill: #111; }
+html[data-theme="poster"] .cyc svg > text + text, html[data-theme="poster"] .cyc svg > text + text + text { fill: #555; }
+html[data-theme="poster"] .screen { border-radius: 0; border-width: 4px; }
+html[data-theme="poster"] .screen .bar { border-bottom-width: 4px; }
+@media (hover: hover) and (pointer: fine) {
+  html[data-theme="paper"] .btn:hover:not(:disabled) { background: var(--red); border-color: var(--red); color: #fff; }
+  html[data-theme="poster"] .btn:hover:not(:disabled) { background: #111; color: #fff; }
+}
 </style>
 </head>
 <body>
+<div id="themeTag" aria-live="polite"></div>
 <div class="reveal">
 <div class="slides">
 
@@ -800,6 +941,25 @@ html, body { background: var(--felt-deep); }
 </div>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+// 디자인 시안 전환: 주소의 ?theme= 또는 T 키
+(function () {
+  var THEMES = [["table", "A 카드 테이블"], ["paper", "B 종이와 잉크"], ["stage", "C 극장"], ["poster", "D 포스터"]];
+  var q = new URLSearchParams(location.search), cur = Math.max(0, THEMES.findIndex(function (t) { return t[0] === q.get("theme"); }));
+  var tag = document.getElementById("themeTag"), timer;
+  function apply(show) {
+    if (cur) document.documentElement.dataset.theme = THEMES[cur][0]; else delete document.documentElement.dataset.theme;
+    if (!show) return;
+    q.set("theme", THEMES[cur][0]); history.replaceState(null, "", "?" + q.toString() + location.hash);
+    tag.textContent = "디자인 시안 " + THEMES[cur][1]; tag.classList.add("on");
+    clearTimeout(timer); timer = setTimeout(function () { tag.classList.remove("on"); }, 1600);
+  }
+  apply(false);
+  document.addEventListener("keydown", function (e) {
+    if ((e.key === "t" || e.key === "T") && !e.metaKey && !e.ctrlKey && !e.altKey) { cur = (cur + 1) % THEMES.length; apply(true); }
+  });
+})();
+</script>
 <script>
 (function () {
   var PIPS = {
