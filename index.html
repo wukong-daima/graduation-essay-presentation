@@ -1343,7 +1343,7 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
 // 디자인 시안 전환: 주소의 ?theme= 또는 T 키
 (function () {
   var THEMES = [["table", "기존 카드 테이블"], ["dark", "1 다크 옐로"], ["ivory", "2 아이보리 아카데믹"], ["report", "3 옐로 리포트"], ["night", "5 나이트 옐로"], ["keynote", "7 블랙 옐로 키노트"], ["espresso", "10 에스프레소 세리프"], ["cream", "13 크림 세리프 피치"], ["glass", "17 글라스 스타트업"], ["star", "25 스트래티지 스타"], ["bulletin", "26 쿼터리 불리틴"]];
-  var q = new URLSearchParams(location.search), cur = Math.max(0, THEMES.findIndex(function (t) { return t[0] === q.get("theme"); }));
+  var q = new URLSearchParams(location.search), cur = Math.max(0, THEMES.findIndex(function (t) { return t[0] === (q.get("theme") || "dark"); }));
   var tag = document.getElementById("themeTag"), timer;
   function apply(show) {
     if (cur) document.documentElement.dataset.theme = THEMES[cur][0]; else delete document.documentElement.dataset.theme;
