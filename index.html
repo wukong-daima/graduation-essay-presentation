@@ -116,9 +116,11 @@ html, body { background: var(--felt-deep); }
 .cover .who b { font-family: var(--serif); font-size: 30px; font-weight: 700; }
 .fan { position: relative; height: 380px; }
 .fan .pc { --w: 216px; position: absolute; left: 50%; top: 28px; margin-left: -108px; }
-.fan .c1 { transform: translate(-158px, 26px) rotate(-12deg); animation: deal1 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
-.fan .c2 { animation: deal2 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
-.fan .c3 { transform: translate(158px, 26px) rotate(12deg); animation: deal3 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
+.fan .c1 { transform: translate(-158px, 26px) rotate(-12deg); }
+.present .fan .c1 { animation: deal1 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
+.present .fan .c2 { animation: deal2 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
+.fan .c3 { transform: translate(158px, 26px) rotate(12deg); }
+.present .fan .c3 { animation: deal3 .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
 @keyframes deal1 { from { transform: translate(0, 60px) rotate(0); opacity: 0; } }
 @keyframes deal2 { from { transform: translate(0, 60px); opacity: 0; } }
 @keyframes deal3 { from { transform: translate(0, 60px) rotate(0); opacity: 0; } }
@@ -295,7 +297,63 @@ html, body { background: var(--felt-deep); }
 .end p { font-size: 28px; margin-top: 22px; color: var(--ivory-dim); }
 .end .links { margin-top: 70px; }
 
+/* 시연: 142,857 */
+.stage { position: relative; height: 236px; margin-top: 30px; }
+.deck { position: absolute; left: 0; top: 20px; width: 140px; height: 196px; }
+.bk {
+  position: absolute; inset: 0; border-radius: 10.5px; border: 7px solid var(--ivory);
+  background:
+    repeating-linear-gradient(45deg, rgba(245, 239, 223, .22) 0 2px, transparent 2px 10px),
+    repeating-linear-gradient(-45deg, rgba(245, 239, 223, .22) 0 2px, transparent 2px 10px),
+    #8f1d24;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+}
+.dcard { position: absolute; left: 0; top: 20px; width: 140px; height: 196px; perspective: 900px; }
+.dcard .in { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateY(180deg); transition: transform .6s cubic-bezier(.3, .7, .2, 1); }
+.dcard.up .in { transform: rotateY(0); }
+.dcard .in > * { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.dcard .in > .bk { transform: rotateY(180deg); }
+.dcard .pc { --w: 140px; }
+.eq { height: 96px; margin-top: 22px; font-family: var(--serif); font-weight: 800; font-size: 70px; line-height: 96px; letter-spacing: -0.01em; white-space: nowrap; }
+.eq .x { color: var(--brass); margin: 0 .25em; }
+.eq .res { display: inline-block; animation: pop .5s cubic-bezier(.2, .9, .3, 1.3) both; }
+@keyframes pop { from { transform: scale(.6); opacity: 0; } }
+.ctl { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
+.btn {
+  font: 600 22px/1 var(--sans); color: var(--ivory); background: rgba(0, 0, 0, .18);
+  border: 2px solid var(--brass); border-radius: 999px; padding: 15px 26px; cursor: pointer;
+}
+.btn:hover:not(:disabled) { background: var(--brass); color: var(--ink); }
+.btn:focus-visible, .die:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.btn:disabled, .die:disabled { opacity: .3; cursor: default; }
+.dice { display: flex; gap: 10px; margin-left: 26px; }
+.die {
+  width: 58px; height: 58px; padding: 8px; border: 0; border-radius: 12px; background: var(--ivory); cursor: pointer;
+  display: grid; grid-template: repeat(3, 1fr) / repeat(3, 1fr); box-shadow: 0 5px 0 rgba(0, 0, 0, .3);
+}
+.die i { width: 9px; height: 9px; border-radius: 50%; background: var(--ink); place-self: center; }
+.die.on { background: var(--brass); transform: translateY(3px); box-shadow: 0 2px 0 rgba(0, 0, 0, .3); }
+.ctl .btn.ghost { margin-left: auto; border-color: var(--felt-line); color: var(--ivory-dim); }
+
+/* 장면이 나타날 때의 움직임 */
+.reveal section.present .dv .pc { animation: dealin .9s cubic-bezier(.2, .8, .2, 1) both; }
+.reveal section.present .dv h2 { animation: rise .7s ease-out .25s both; }
+.reveal section.present .dv p { animation: rise .7s ease-out .45s both; }
+@keyframes dealin { from { transform: translate(-260px, 120px) rotate(-38deg); opacity: 0; } }
+@keyframes rise { from { transform: translateY(26px); opacity: 0; } }
+.reveal section.present .seven .pc { animation: dealin .9s cubic-bezier(.2, .8, .2, 1) both; }
+.reveal section.present .bars .bar { transform-origin: left center; animation: grow 1s cubic-bezier(.2, .8, .2, 1) .2s both; }
+@keyframes grow { from { transform: scaleX(0); } }
+.reveal section.present .chap div { animation: rise .5s ease-out both; }
+.reveal section.present .chap div:nth-child(1) { animation-delay: .05s; } .reveal section.present .chap div:nth-child(3) { animation-delay: .15s; }
+.reveal section.present .chap div:nth-child(5) { animation-delay: .25s; } .reveal section.present .chap div:nth-child(7) { animation-delay: .35s; }
+.reveal section.present .chap div:nth-child(2) { animation-delay: .45s; } .reveal section.present .chap div:nth-child(4) { animation-delay: .55s; }
+.reveal section.present .chap div:nth-child(6) { animation-delay: .65s; } .reveal section.present .chap div:nth-child(8) { animation-delay: .75s; }
+.reveal section.present .because { animation: rise .8s ease-out .1s both; }
+
 @media (prefers-reduced-motion: reduce) {
+  .reveal section.present *, .fan .pc, .eq .res { animation: none !important; }
+  .dcard .in { transition: none; }
   .reveal .slides section, .reveal .fragment { transition: none !important; }
 }
 </style>
@@ -457,6 +515,21 @@ html, body { background: var(--felt-deep); }
   <aside class="notes">2학기 발표 자료의 주제 선정 이유에는 "내가 좋아해서"라고 적었습니다. 군 복무 중에 우연히 마술 책 한 권을 보고 시작해 20년 넘게 이어 온 취미입니다. 오래 붙들 수 있는 주제는 결국 좋아하는 것이었습니다.</aside>
 </section>
 
+<!-- 시연 -->
+<section id="demo142">
+  <div class="head"><div class="chip red"><b>2</b><i>♦&#xFE0E;</i></div><h2>시연: 카드 여섯 장과 주사위 하나</h2></div>
+  <div class="stage" id="stage"><div class="deck" id="deck"></div></div>
+  <p class="eq" id="eq" aria-live="polite"></p>
+  <div class="ctl">
+    <button class="btn" id="bShuffle" type="button">섞기</button>
+    <button class="btn" id="bDraw" type="button">6장 뽑기</button>
+    <div class="dice" id="dice" role="group" aria-label="관객이 말한 주사위 눈"></div>
+    <button class="btn ghost" id="bReset" type="button">처음으로</button>
+  </div>
+  <p class="foot">2학기, 주제 잡기</p>
+  <aside class="notes">2학기 발표에서 했던 시연을 다시 보여 드립니다. 섞기를 누르고, 6장 뽑기를 누릅니다. 관객 한 분께 머릿속으로 주사위를 굴리게 한 뒤 나온 눈을 묻고, 그 숫자의 주사위를 누르거나 키보드 숫자 1~6을 누릅니다. 카드 여섯 장이 자리만 바꿔 곱셈의 답이 됩니다.</aside>
+</section>
+
 <!-- 9 2학기: 142,857 -->
 <section>
   <div class="head"><div class="chip red"><b>2</b><i>♦&#xFE0E;</i></div><h2>좋아하는 것을 전공의 말로 옮기다</h2></div>
@@ -538,7 +611,7 @@ html, body { background: var(--felt-deep); }
   <div class="seven">
     <div class="pc red" data-rank="7" data-suit="♥" aria-hidden="true"></div>
     <div>
-      <p class="big">97.8%<small>가 하트 7</small></p>
+      <p class="big"><span data-count="97.8">97.8</span>%<small>가 하트 7</small></p>
       <p class="dim" style="margin-top:16px;font-size:30px">배치 응답 52,000건의 결과</p>
       <ul class="but">
         <li class="fragment">비교할 통제 조건이 없었다</li>
@@ -718,9 +791,11 @@ html, body { background: var(--felt-deep); }
     2: [[50, 24], [50, 76, "dn"]],
     3: [[50, 22], [50, 50], [50, 78, "dn"]],
     4: [[37, 25], [63, 25], [37, 75, "dn"], [63, 75, "dn"]],
-    7: [[37, 22], [63, 22], [50, 36], [37, 50], [63, 50], [37, 78, "dn"], [63, 78, "dn"]]
+    5: [[37, 25], [63, 25], [50, 50], [37, 75, "dn"], [63, 75, "dn"]],
+    7: [[37, 22], [63, 22], [50, 36], [37, 50], [63, 50], [37, 78, "dn"], [63, 78, "dn"]],
+    8: [[37, 22], [63, 22], [50, 36], [37, 50], [63, 50], [50, 64, "dn"], [37, 78, "dn"], [63, 78, "dn"]]
   };
-  document.querySelectorAll(".pc[data-rank]").forEach(function (c) {
+  function buildCard(c) {
     var r = c.dataset.rank, s = c.dataset.suit + "\uFE0E";
     var idx = "<b>" + r + "</b><i>" + s + "</i>";
     var html = '<div class="idx">' + idx + '</div><div class="idx btm">' + idx + "</div>";
@@ -728,7 +803,9 @@ html, body { background: var(--felt-deep); }
       html += '<span class="pip ' + (p[2] || "") + '" style="left:' + p[0] + "%;top:" + p[1] + '%">' + s + "</span>";
     });
     c.innerHTML = html;
-  });
+  }
+  window.buildCard = buildCard;
+  document.querySelectorAll(".pc[data-rank]").forEach(buildCard);
   document.querySelectorAll(".slides > section").forEach(function (sec) {
     var mark = sec.querySelector(".chip i") || sec.querySelector(".dv .pc .idx i");
     sec.dataset.suit = mark ? mark.textContent : "\u2660\uFE0E";
@@ -750,10 +827,124 @@ Reveal.initialize({
   hash: true,
   fragments: !location.search.includes("nofrag"),
   slideNumber: "c/t",
-  transition: "fade",
-  transitionSpeed: "fast",
+  transition: "slide",
+  transitionSpeed: "default",
   plugins: [RevealNotes]
 });
+
+// 숫자가 올라가는 효과
+function countUp(slide) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  slide.querySelectorAll("[data-count]").forEach(function (el) {
+    var end = parseFloat(el.dataset.count), t0 = performance.now();
+    (function tick(t) {
+      var k = Math.min(1, (t - t0) / 1300), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = (end * e).toFixed(1);
+      if (k < 1) requestAnimationFrame(tick); else el.textContent = el.dataset.count;
+    })(t0);
+  });
+}
+Reveal.on("slidechanged", function (ev) { countUp(ev.currentSlide); });
+
+// 시연: 142,857
+(function () {
+  var RANKS = ["A", "4", "2", "8", "5", "7"], BASE = "142857", SUITS = ["♠", "♥", "♦", "♣"];
+  var stage = document.getElementById("stage"), deck = document.getElementById("deck"), eq = document.getElementById("eq");
+  var dice = document.getElementById("dice"), bS = document.getElementById("bShuffle"), bD = document.getElementById("bDraw"), bR = document.getElementById("bReset");
+  var cards = [], slots = [], busy = false, drawn = false;
+  var slotX = function (i) { return 232 + i * 150; };
+  var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+$)/g, ","); };
+  var still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  for (var i = 0; i < 16; i++) {
+    var b = document.createElement("div"); b.className = "bk";
+    b.style.transform = "translate(" + (-i * 0.7) + "px," + (-i * 0.9) + "px)";
+    deck.appendChild(b);
+  }
+  var DOTS = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] };
+  for (var n = 1; n <= 6; n++) {
+    var d = document.createElement("button"); d.type = "button"; d.className = "die"; d.disabled = true;
+    d.dataset.n = n; d.setAttribute("aria-label", "주사위 " + n);
+    for (var c = 0; c < 9; c++) d.appendChild(DOTS[n].indexOf(c) >= 0 ? document.createElement("i") : document.createElement("span"));
+    d.addEventListener("click", function () { multiply(+this.dataset.n); });
+    dice.appendChild(d);
+  }
+  function setDice(on) { dice.querySelectorAll(".die").forEach(function (x) { x.disabled = !on; x.classList.remove("on"); }); }
+
+  function shuffle() {
+    if (busy || drawn) return; busy = true;
+    var bks = deck.querySelectorAll(".bk"), dur = still ? 1 : 1500;
+    bks.forEach(function (b, i) {
+      var base = b.style.transform, side = i % 2 ? 1 : -1;
+      b.animate([
+        { transform: base },
+        { transform: base + " translate(" + side * 78 + "px,-6px) rotate(" + side * 7 + "deg)", offset: 0.22 },
+        { transform: base + " translate(0,-14px)", offset: 0.42 },
+        { transform: base + " translate(" + -side * 78 + "px,-6px) rotate(" + -side * 7 + "deg)", offset: 0.62 },
+        { transform: base + " translate(0,-10px)", offset: 0.84 },
+        { transform: base }
+      ], { duration: dur, delay: still ? 0 : i * 14, easing: "ease-in-out" });
+    });
+    setTimeout(function () { busy = false; }, dur + 260);
+  }
+
+  function draw() {
+    if (busy || drawn) return; busy = true; drawn = true; bS.disabled = true; bD.disabled = true;
+    RANKS.forEach(function (r, i) {
+      var suit = SUITS[Math.floor(Math.random() * 4)];
+      var el = document.createElement("div"); el.className = "dcard"; el.style.zIndex = 10 + i;
+      el.innerHTML = '<div class="in"><div class="pc' + (suit === "♥" || suit === "♦" ? " red" : "") + '" data-rank="' + r + '" data-suit="' + suit + '"></div><div class="bk"></div></div>';
+      window.buildCard(el.querySelector(".pc"));
+      el.style.transform = "translate(-10px,-14px)";
+      el.style.transition = "transform .7s cubic-bezier(.2,.8,.2,1)";
+      stage.appendChild(el); cards.push(el); slots.push(i);
+      setTimeout(function () {
+        el.style.transform = "translate(" + slotX(i) + "px,0)";
+        el.classList.add("up");
+      }, still ? 0 : 150 + i * 420);
+    });
+    setTimeout(function () {
+      cards.forEach(function (c) { c.style.transition = "none"; });
+      eq.innerHTML = fmt(BASE); setDice(true); busy = false;
+    }, still ? 50 : 150 + 6 * 420 + 500);
+  }
+
+  function multiply(n) {
+    if (!drawn || busy) return; busy = true;
+    var res = String(142857 * n), start = BASE.indexOf(res[0]);
+    var maxDur = 0;
+    cards.forEach(function (el, i) {
+      var from = slots[i], to = (i - start + 6) % 6;
+      if (from === to) return;
+      var step = (to - from + 6) % 6, dir = step <= 3 ? step : step - 6, wrap = from + dir < 0 || from + dir > 5;
+      var a = "translate(" + slotX(from) + "px,0)", z = "translate(" + slotX(to) + "px,0)";
+      var dur = still ? 1 : (wrap ? 1100 : 800); maxDur = Math.max(maxDur, dur);
+      el.style.zIndex = wrap ? 40 : 10 + to;
+      el.style.transform = z; slots[i] = to;
+      el.animate(wrap
+        ? [{ transform: a }, { transform: "translate(" + (slotX(from) + slotX(to)) / 2 + "px,-150px) rotate(" + (dir > 0 ? 10 : -10) + "deg)" }, { transform: z }]
+        : [{ transform: a }, { transform: z }],
+        { duration: dur, easing: "cubic-bezier(.4,0,.2,1)" });
+    });
+    dice.querySelectorAll(".die").forEach(function (x) { x.classList.toggle("on", +x.dataset.n === n); });
+    eq.innerHTML = fmt(BASE) + '<span class="x">×</span>' + n + '<span class="x">=</span>';
+    setTimeout(function () {
+      eq.innerHTML += '<span class="res">' + fmt(res) + "</span>"; busy = false;
+    }, maxDur + 150);
+  }
+
+  function reset() {
+    cards.forEach(function (el) { el.remove(); });
+    cards = []; slots = []; drawn = false; busy = false; eq.innerHTML = "";
+    bS.disabled = false; bD.disabled = false; setDice(false);
+  }
+  bS.addEventListener("click", shuffle); bD.addEventListener("click", draw); bR.addEventListener("click", reset);
+  document.addEventListener("keydown", function (e) {
+    if (Reveal.getCurrentSlide().id !== "demo142" || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key >= "1" && e.key <= "6") multiply(+e.key);
+  });
+  window.__demo = { shuffle: shuffle, draw: draw, multiply: multiply };
+})();
 </script>
 </body>
 </html>
