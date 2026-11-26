@@ -319,6 +319,16 @@ html, body { background: var(--felt-deep); }
 .got div { border-top: 2px solid var(--brass); padding-top: 20px; }
 .got b { display: block; font-family: var(--serif); font-size: 38px; font-weight: 700; margin-bottom: 8px; }
 .got p { font-size: 27px; color: var(--ivory-dim); line-height: 1.55; }
+.got b small { font-family: var(--sans); font-size: 19px; font-weight: 500; color: var(--brass); margin-left: 12px; letter-spacing: 0; }
+.ps { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 8px; }
+.ps > div { border-top: 2px solid var(--brass); padding-top: 18px; }
+.ps h3 { font-size: 32px; margin-bottom: 6px; }
+.ps .how { font-size: 23px; color: var(--ivory-dim); line-height: 1.5; margin-bottom: 18px; }
+.tags { display: flex; flex-wrap: wrap; gap: 9px; }
+.tags span { font-size: 20px; padding: 6px 14px; border-radius: 999px; border: 1.5px solid var(--felt-line); color: var(--ivory); }
+.tags span.k { border-color: var(--brass); }
+.ps .plus { margin-top: 16px; font-size: 21px; color: var(--ivory-dim); line-height: 1.5; }
+
 
 /* 21. 피드 페이지 */
 .demo { display: grid; grid-template-columns: 1fr 440px; gap: 56px; align-items: center; margin-top: 40px; }
@@ -1097,6 +1107,26 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
   <aside class="notes">3학기에는 공연에서 느껴 온 것을 실험할 수 있는 질문으로 바꿨습니다. 관객에게 카드 한 장을 떠올려 보라고 하면 특정 카드가 자주 나온다는 인상이 있었습니다. 그렇다면 관객은 자유롭게 골랐다고 믿는데 사실은 정해 둔 카드를 고르게 할 수 있을지, 사람에게 묻기 전에 언어 모델로 만든 가상의 관객에게 먼저 시험해 보기로 했습니다.</aside>
 </section>
 
+<!-- 3학기: 페르소나 -->
+<section>
+  <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>가상의 관객에게 개성을 주는 법</h2></div>
+  <div class="ps">
+    <div>
+      <h3>1차: 속성 10가지를 섞었다</h3>
+      <p class="how">속성마다 값을 무작위로 뽑아 조합해 페르소나 1만 명을 만들었다. 공연 관객층에 맞춰 뽑히는 비율을 정했다.</p>
+      <div class="tags"><span class="k">성별</span><span class="k">연령대</span><span class="k">직업</span><span class="k">성격</span><span>기분</span><span>선호 색</span><span>선호 계절</span><span>스타일</span><span>에너지</span><span>카드 친숙도</span></div>
+    </div>
+    <div>
+      <h3>2차: 성격 원형 10가지 × 10명</h3>
+      <p class="how">원형마다 10명씩, 100명을 만들어 모두 같은 조건으로 실험했다.</p>
+      <div class="tags"><span>직관적 모험가</span><span>분석적 전략가</span><span>감성적 예술가</span><span>실용적 관리자</span><span>자유로운 방랑자</span><span>따뜻한 조력자</span><span>차가운 회의주의자</span><span>야망찬 도전자</span><span>평온한 관찰자</span><span>신비주의자</span></div>
+      <p class="plus">원형에 맞는 MBTI를 정하고, 이름과 취미, 말버릇까지 붙여 한 사람의 설명문으로 만들었다.</p>
+    </div>
+  </div>
+  <p class="foot">3학기, 실험</p>
+  <aside class="notes">가상의 관객을 어떻게 만들었는지 말씀드리겠습니다. 1차에서는 성별, 연령대, 직업, 성격, 기분, 좋아하는 색 같은 속성 열 가지를 무작위로 조합해 페르소나 1만 명을 만들었습니다. 2차에서는 사람을 열 가지 성격 원형으로 나누고, 원형마다 열 명씩 100명을 만들었습니다. 각 사람에게 MBTI, 이름, 취미, 말버릇까지 붙여 한 사람의 소개글처럼 만들고, 이 소개글을 모델에게 주어 그 사람이 되어 카드를 고르게 했습니다.</aside>
+</section>
+
 <!-- 13 3학기: chae-ACAAN -->
 <section>
   <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>1차 chae-ACAAN: 하트 7로 쏠린 결과</h2></div>
@@ -1120,13 +1150,13 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
 <section>
   <div class="head"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>그래서 2차에서는 설계를 고쳤다</h2></div>
   <div class="got">
-    <div><b>통제 조건과 위약 조건</b><p>아무 자극도 주지 않는 조건과, 다른 카드의 키워드를 주는 조건을 두어 비교했다.</p></div>
-    <div><b>비선호 목표</b><p>사전 보정에서 한 번도 뽑히지 않은 카드를 목표로 정해, 모델이 원래 좋아하는 카드와 분리했다.</p></div>
-    <div><b>키워드 제시</b><p>장면과 비유로 쓴 대본 대신, 임베딩 유사도로 고른 단어를 5개, 10개, 15개 제시했다.</p></div>
-    <div><b>응답 예시 제거</b><p>특정 카드를 유도할 수 있는 카드 표기 예시를 본 실험 전에 지웠다.</p></div>
+    <div><b>비교 대상<small>통제·위약 조건</small></b><p>아무 말도 안 한 경우, 엉뚱한 단어를 준 경우와 나란히 비교했다.</p></div>
+    <div><b>안 고르는 카드<small>비선호 목표</small></b><p>평소 한 번도 안 고른 카드를 노렸다. 원래 취향과 섞이지 않게.</p></div>
+    <div><b>문장 대신 단어<small>키워드 프라이밍</small></b><p>목표 카드와 뜻이 가까운 단어를 5개, 10개, 15개 보여 줬다.</p></div>
+    <div><b>힌트 지우기<small>응답 예시 제거</small></b><p>답 예시에 적혀 있던 카드 이름을 지웠다.</p></div>
   </div>
   <p class="foot">3학기, 실험</p>
-  <aside class="notes">한 카드로 쏠린 결과를 믿을 수 없었기 때문에, 2차에서는 설계를 네 군데 고쳤습니다. 비교할 통제 조건과 위약 조건을 두었고, 모델이 원래 좋아하는 카드가 아니라 사전 보정에서 한 번도 뽑히지 않은 카드를 목표로 삼았습니다. 대본은 키워드 나열로 바꾸었고, 1차에서 문제가 된 응답 예시는 지웠습니다.</aside>
+  <aside class="notes">한 카드로 쏠린 결과를 믿을 수 없었기 때문에, 2차에서는 네 가지를 고쳤습니다. 첫째, 비교 대상을 만들었습니다. 아무 말도 하지 않은 경우와 엉뚱한 카드의 단어를 보여 준 경우를 같이 돌렸습니다. 둘째, 모델이 평소 한 번도 고르지 않은 카드를 목표로 삼았습니다. 원래 좋아하는 카드를 노리면 맞혀도 대본 덕인지 알 수 없기 때문입니다. 셋째, 긴 이야기 대신 목표 카드와 뜻이 가까운 단어를 5개, 10개, 15개 보여 줬습니다. 넷째, 1차에서 문제가 된 답 예시 속 카드 이름을 지웠습니다.</aside>
 </section>
 
 <!-- 14 3학기: A-PMFS -->
@@ -1361,7 +1391,7 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
     page.appendChild(main);
     sec.insertBefore(page, sec.firstChild);
     if (sec.id === "demo142") return;
-    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .kicker, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .main > .lead, .fix, .final, .final-sub, .got div, .demo > *, .three li, .end h2, .end p");
+    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .kicker, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .main > .lead, .fix, .final, .final-sub, .got div, .ps > div, .demo > *, .three li, .end h2, .end p");
     var k = 0;
     items.forEach(function (el) {
       if (el.closest("[data-st]")) return;
