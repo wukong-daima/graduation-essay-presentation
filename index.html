@@ -258,17 +258,31 @@ html, body { background: var(--felt-deep); }
 .but li { padding: 13px 0 13px 22px; border-left: 4px solid var(--red); margin-bottom: 12px; font-size: 27px; background: rgba(0,0,0,.18); }
 
 /* 14. A-PMFS */
-.bars { display: grid; grid-template-columns: 270px 1fr 130px; gap: 9px 24px; align-items: center; font-size: 25px; }
-.bars .bar { height: 36px; background: var(--ivory-dim); border-radius: 0 6px 6px 0; }
+.bars { display: grid; grid-template-columns: 270px 1fr 130px; gap: 6px 24px; align-items: center; font-size: 24px; }
+.bars .bar { height: 30px; background: var(--ivory-dim); border-radius: 0 6px 6px 0; }
 .bars .bar.hit { background: var(--brass); }
 .bars .bar.ctl { background: #7f978b; }
 .bars .v { font-family: var(--serif); font-weight: 900; font-size: 34px; }
 .bars .k small { display: block; font-size: 20px; color: var(--ivory-dim); line-height: 1.2; }
+.pr-def { font-size: 25px; line-height: 1.55; color: var(--ivory-dim); margin-bottom: 22px; max-width: 46em; }
+.pr-def b { color: var(--ivory); font-weight: 700; }
+.flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.flow > div { position: relative; padding: 18px 18px 20px; border-radius: 12px; background: rgba(255, 255, 255, .055); border: 1px solid var(--felt-line); }
+.flow .n { font: 800 15px var(--sans); color: var(--brass); }
+.flow h3 { font-size: 24px; margin: 4px 0 4px; }
+.flow h3 small { display: block; font: 500 15px var(--sans); color: var(--brass); margin-top: 2px; }
+.flow p { font-size: 20px; line-height: 1.5; color: var(--ivory-dim); }
+.flow > div + div::before { content: "▶"; position: absolute; left: -13px; top: 50%; transform: translateY(-50%); font-size: 14px; color: var(--brass); }
+.ex { margin-top: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 21px; }
+.ex .lbl { color: var(--ivory-dim); }
+.ex .card { font-weight: 800; color: var(--ivory); }
+.ex .w { padding: 5px 14px; border-radius: 999px; border: 1.5px solid var(--brass); color: var(--ivory); font-size: 20px; }
+.pr-note { margin-top: 14px; font-size: 17px; color: var(--ivory-dim); }
 .barcap { font-size: 21px; color: var(--ivory-dim); margin-bottom: 14px; }
 .barcap b { color: var(--ivory); font-weight: 600; }
 .verdict { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; font-size: 27px; }
-.verdict div { border-top: 2px solid var(--brass); padding-top: 12px; font-size: 23px; color: var(--ivory-dim); line-height: 1.5; }
-.verdict b { display: block; font-family: var(--serif); font-size: 29px; font-weight: 700; color: var(--ivory); margin-bottom: 4px; }
+.verdict div { border-top: 2px solid var(--brass); padding-top: 10px; font-size: 21px; color: var(--ivory-dim); line-height: 1.5; }
+.verdict b { display: block; font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--ivory); margin-bottom: 4px; }
 
 /* 15. 반복 */
 .loop { display: grid; grid-template-columns: 1fr 60px 1fr 60px 1fr; align-items: stretch; margin-top: 6px; }
@@ -307,11 +321,11 @@ html, body { background: var(--felt-deep); }
 /* 검사 방법 표 */
 .chk { padding: 4px 32px; }
 .chk th { padding: 13px 0 8px; font-size: 18px; }
-.chk td { padding: 11px 22px 11px 0; font-size: 21px; line-height: 1.45; }
+.chk td { padding: 9px 22px 9px 0; font-size: 20px; line-height: 1.4; }
 .fix.chk td:first-child { width: 27%; color: inherit; font-weight: 600; }
 .fix.chk td:nth-child(2) { width: 31%; font-weight: 400; opacity: .78; }
 .fix.chk td:last-child { font-weight: 500; }
-.caveat { margin-top: 20px; font-size: 22px; color: var(--ivory-dim); }
+.caveat { margin-top: 14px; font-size: 21px; color: var(--ivory-dim); }
 
 /* 19. 결론 */
 .final { font-family: var(--serif); font-weight: 700; font-size: 52px; line-height: 1.5; letter-spacing: -0.01em; max-width: 21em; margin-top: 30px; }
@@ -1166,19 +1180,35 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
   <aside class="notes">한 카드로 쏠린 결과를 믿을 수 없었기 때문에, 2차에서는 네 가지를 고쳤습니다. 첫째, 비교 대상을 만들었습니다. 아무 말도 하지 않은 경우와 엉뚱한 카드의 단어를 보여 준 경우를 같이 돌렸습니다. 둘째, 모델이 평소 한 번도 고르지 않은 카드를 목표로 삼았습니다. 원래 좋아하는 카드를 노리면 맞혀도 대본 덕인지 알 수 없기 때문입니다. 셋째, 긴 이야기 대신 목표 카드와 뜻이 가까운 단어를 5개, 10개, 15개 보여 줬습니다. 넷째, 1차에서 문제가 된 답 예시 속 카드 이름을 지웠습니다.</aside>
 </section>
 
+<!-- 3학기: 프라이밍과 벡터 유사도 -->
+<section>
+  <div class="head" style="margin-bottom:12px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>프라이밍 단어는 이렇게 골랐다</h2></div>
+  <p class="pr-def"><b>프라이밍(Priming)</b>은 먼저 본 단어가 뒤의 판단을 그쪽으로 끌어당기는 현상이다. 마술사가 대화에 섞는 단어로 관객이 떠올리는 카드를 바꿀 수 있는지가 이 실험의 질문이다.</p>
+  <div class="flow">
+    <div><p class="n">1</p><h3>단어 모으기</h3><p>AI가 목표 카드에서 떠오르는 한국어 단어 50개를 만든다.</p></div>
+    <div><p class="n">2</p><h3>숫자로 바꾸기<small>임베딩</small></h3><p>카드와 단어를 뜻이 담긴 숫자 좌표(벡터)로 바꾼다. 뜻이 비슷할수록 가까이 놓인다.</p></div>
+    <div><p class="n">3</p><h3>가까운 순으로<small>벡터 유사도</small></h3><p>카드와 거리가 가까운 단어부터 줄 세운다. 카드 이름이 드러나는 단어는 뺀다.</p></div>
+    <div><p class="n">4</p><h3>보여 주기<small>프라이밍</small></h3><p>위에서 5개, 10개, 15개를 "이미지를 떠올려 보세요"와 함께 보여 주고 카드를 고르게 한다.</p></div>
+  </div>
+  <div class="ex"><span class="lbl">예시</span><span class="card">스페이드 7</span><span class="lbl">을 노릴 때</span><span class="w">검은색</span><span class="w">탈출</span><span class="w">흑백</span><span class="w">상실</span><span class="w">암흑</span><span class="lbl">…</span></div>
+  <p class="pr-note">단어 생성은 GPT-4o-mini, 숫자 변환은 text-embedding-3-large를 썼다. 유사도로 고른 방식이 다른 선별 방식보다 나은지는 비교하지 않았다.</p>
+  <p class="foot">3학기, 실험</p>
+  <aside class="notes">여기서 말하는 단어는 프라이밍 단어입니다. 프라이밍은 먼저 본 단어가 뒤의 판단을 그쪽으로 끌어당기는 현상입니다. 마술사가 대화 속에 섞는 단어로 관객이 떠올리는 카드를 바꿀 수 있는지가 제 질문이었습니다. 단어는 네 단계로 골랐습니다. 먼저 AI에게 목표 카드에서 떠오르는 단어 50개를 만들게 했습니다. 다음으로 카드와 단어를 임베딩, 즉 뜻이 담긴 숫자 좌표로 바꿨습니다. 뜻이 비슷하면 좌표가 가깝게 놓입니다. 그 거리, 벡터 유사도가 가까운 순서로 단어를 줄 세우고, 카드 이름이 드러나는 단어는 뺐습니다. 마지막으로 위에서부터 5개, 10개, 15개를 보여 주고 카드를 고르게 했습니다. 예를 들어 스페이드 7을 노릴 때는 검은색, 탈출, 흑백, 상실, 암흑 같은 단어가 나왔습니다. 다만 이렇게 유사도로 고른 방식이 다른 방식보다 낫다는 것까지 비교하지는 못했습니다.</aside>
+</section>
+
 <!-- 14 3학기: A-PMFS -->
 <section>
   <div class="head" style="margin-bottom:10px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>2차 A-PMFS: 조건을 나누어 다시 묻다</h2></div>
-  <p class="barcap">가상 관객 100명에게 다섯 가지 방식으로 3,000번씩 물었을 때, <b>노린 카드가 실제로 나온 비율</b>. 막대가 길수록 잘 통한 것이다.</p>
+  <p class="barcap">방식마다 3,000번씩 물었을 때 <b>노린 카드가 나온 비율</b>. 막대가 길수록 프라이밍이 잘 통했다.</p>
   <div class="bars" role="img" aria-label="조건별 목표 카드 적중률 막대그래프">
     <div class="k">통제<small>아무 단어도 안 보여 줌</small></div><div><div class="bar ctl" style="width:22%"></div></div><div class="v">0.60%</div>
-    <div class="k">목표 키워드 5개</div><div><div class="bar" style="width:69.6%"></div></div><div class="v">1.90%</div>
-    <div class="k">목표 키워드 10개</div><div><div class="bar" style="width:81.7%"></div></div><div class="v">2.23%</div>
-    <div class="k">목표 키워드 15개</div><div><div class="bar hit" style="width:100%"></div></div><div class="v">2.73%</div>
+    <div class="k">프라이밍 단어 5개</div><div><div class="bar" style="width:69.6%"></div></div><div class="v">1.90%</div>
+    <div class="k">프라이밍 단어 10개</div><div><div class="bar" style="width:81.7%"></div></div><div class="v">2.23%</div>
+    <div class="k">프라이밍 단어 15개</div><div><div class="bar hit" style="width:100%"></div></div><div class="v">2.73%</div>
     <div class="k">위약<small>다른 카드의 단어 15개</small></div><div><div class="bar ctl" style="width:33%"></div></div><div class="v">0.90%</div>
   </div>
   <div class="verdict">
-    <div><b>단어를 보여 주면 조금 더 맞혔다</b>1,000번 중 6번에서 27번으로. 엉뚱한 단어는 9번으로 거의 그대로였다.</div>
+    <div><b>프라이밍 단어를 보여 주면 조금 더 맞혔다</b>1,000번 중 6번에서 27번으로. 엉뚱한 단어는 9번으로 거의 그대로였다.</div>
     <div><b>그래도 무대에 쓰기엔 낮다</b>15개를 보여 줘도 100번에 3번꼴. 관객 앞에서 믿고 쓸 수준은 아니다.</div>
   </div>
   <p class="foot">3학기, 실험</p>
@@ -1187,20 +1217,20 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
 
 <!-- 3학기: 여러 방법으로 검사 -->
 <section>
-  <div class="head" style="margin-bottom:14px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>차이가 버티는지 여러 방법으로 검사했다</h2></div>
+  <div class="head" style="margin-bottom:14px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>그 차이가 진짜인지 다섯 번 확인했다</h2></div>
   <div class="sheet fix chk">
     <table>
-      <tr><th>방법</th><th>무엇을 보는가</th><th>결과</th></tr>
-      <tr><td>카이제곱 검정</td><td>다섯 조건의 분포가 서로 다른가</td><td>χ²(4) = 59.05, p = 4.6×10⁻¹²</td></tr>
-      <tr><td>크라메르의 V</td><td>차이의 크기가 충분한가</td><td>0.082. 처음 정한 기준 0.2에 미달</td></tr>
-      <tr><td>페르소나 단위 분석, Holm 보정</td><td>같은 페르소나의 반복 응답과 다중 비교를 고려해도 남는가</td><td>키워드 15개는 유지(p = 0.000430), 5개는 유의하지 않음(p = 0.100)</td></tr>
-      <tr><td>부트스트랩 20,000회</td><td>차이의 범위가 얼마인가</td><td>+1.17 ~ +3.23%p</td></tr>
-      <tr><td>민감도 점검</td><td>예비 자료를 빼거나 표기 규칙을 바꿔도 같은가</td><td>+2.04%p, +2.17%p로 유지</td></tr>
+      <tr><th>무엇을 확인했나</th><th>어떻게</th><th>결과</th></tr>
+      <tr><td>다섯 방식의 결과가 정말 다른가</td><td>카이제곱 검정</td><td>다르다. 우연으로 보기는 어렵다</td></tr>
+      <tr><td>차이가 충분히 큰가</td><td>크라메르의 V</td><td>작다. 0.082로, 처음 정한 목표 0.2에 못 미친다</td></tr>
+      <tr><td>같은 사람이 여러 번 답한 점을 고려해도 남는가</td><td>페르소나별로 묶어 다시 계산<br>(Holm 보정)</td><td>단어 15개는 남았다. 5개는 사라졌다</td></tr>
+      <tr><td>더 나온 정도는 어느 범위인가</td><td>자료를 2만 번 다시 뽑아 계산 (부트스트랩)</td><td>1,000번에 약 12번에서 32번 더</td></tr>
+      <tr><td>자료를 조금 바꿔도 같은가</td><td>예비 실험을 빼고, 카드 이름 규칙을 바꿔 계산</td><td>거의 같다 (1,000번에 20번, 22번 더)</td></tr>
     </table>
   </div>
-  <p class="caveat">모두 같은 자료로 한 사후 분석이어서 독립된 반복 실험을 대신하지는 못한다. 적중 82건 가운데 49건은 상위 10개 페르소나에서 나왔다.</p>
+  <p class="caveat">모두 같은 자료를 다시 본 것으로, 새 실험은 아니다. 맞힌 82번 중 49번은 10명에게서 나왔다.</p>
   <p class="foot">3학기, 실험</p>
-  <aside class="notes">차이가 나왔다고 바로 믿지 않고, 그 차이가 버티는지 여러 방법으로 검사했습니다. 방법마다 묻는 것이 다릅니다. 분포가 다른지, 차이가 충분히 큰지, 같은 페르소나의 반복 응답을 고려해도 남는지, 자료를 일부 빼도 같은지를 봤습니다. 키워드 15개 조건의 차이는 유지됐지만 크기는 기준에 못 미쳤고, 이 검사들도 같은 자료로 한 사후 분석이라는 한계가 있습니다. 이 가운데 페르소나 단위 분석과 민감도 점검은 에세이를 쓰면서 추가한 것입니다.</aside>
+  <aside class="notes">차이가 나왔다고 바로 믿지 않고, 그 차이가 진짜인지 다섯 가지로 확인했습니다. 첫째, 다섯 방식의 결과가 정말 다른지 봤고, 우연으로 보기는 어려웠습니다. 둘째, 차이가 충분히 큰지 봤는데, 작았습니다. 처음 정한 목표에 못 미쳤습니다. 셋째, 같은 가상 관객이 서른 번씩 답했기 때문에 그 점을 고려해 사람별로 묶어 다시 계산했습니다. 단어 15개의 효과는 남았지만 5개의 효과는 사라졌습니다. 넷째, 자료를 2만 번 다시 뽑아 보니 1,000번에 12번에서 32번 정도 더 나오는 범위였습니다. 다섯째, 예비 실험을 빼거나 카드 이름 규칙을 바꿔도 결과는 거의 같았습니다. 다만 모두 같은 자료를 다시 본 것이라, 새로 실험해서 확인한 것은 아닙니다. 이 가운데 사람별 계산과 자료를 바꿔 본 점검은 에세이를 쓰면서 추가한 것입니다.</aside>
 </section>
 
 <!-- 15 3학기: 반복 -->
