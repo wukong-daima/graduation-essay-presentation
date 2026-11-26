@@ -325,6 +325,15 @@ html, body { background: var(--felt-deep); }
 .fix.chk td:first-child { width: 27%; color: inherit; font-weight: 600; }
 .fix.chk td:nth-child(2) { width: 31%; font-weight: 400; opacity: .78; }
 .fix.chk td:last-child { font-weight: 500; }
+.v5 { list-style: none; margin: 6px 0 0; padding: 0; }
+.v5 li { display: grid; grid-template-columns: 250px 1fr 240px; align-items: center; gap: 20px; padding: 13px 0; border-bottom: 1px solid var(--felt-line); }
+.v5 .kw { font-family: var(--serif); font-size: 33px; font-weight: 800; color: var(--ivory); }
+.v5 .q { font-size: 22px; color: var(--ivory-dim); line-height: 1.35; }
+.v5 .q small { display: block; font-size: 16px; color: var(--brass); margin-top: 3px; }
+.v5 .r { justify-self: end; font-size: 22px; font-weight: 700; padding: 7px 18px; border-radius: 999px; white-space: nowrap; }
+.v5 .r.ok { background: #ffcd0a; color: #111; }
+.v5 .r.mid { border: 2px solid #ffcd0a; color: var(--ivory); }
+.v5 .r.no { background: rgba(255, 255, 255, .14); color: var(--ivory); }
 .caveat { margin-top: 14px; font-size: 21px; color: var(--ivory-dim); }
 
 /* 19. 결론 */
@@ -1218,19 +1227,16 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
 <!-- 3학기: 여러 방법으로 검사 -->
 <section>
   <div class="head" style="margin-bottom:14px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>그 차이가 진짜인지 다섯 번 확인했다</h2></div>
-  <div class="sheet fix chk">
-    <table>
-      <tr><th>무엇을 확인했나</th><th>어떻게</th><th>결과</th></tr>
-      <tr><td>다섯 방식의 결과가 정말 다른가</td><td>카이제곱 검정</td><td>다르다. 우연으로 보기는 어렵다</td></tr>
-      <tr><td>차이가 충분히 큰가</td><td>크라메르의 V</td><td>작다. 0.082로, 처음 정한 목표 0.2에 못 미친다</td></tr>
-      <tr><td>같은 사람이 여러 번 답한 점을 고려해도 남는가</td><td>페르소나별로 묶어 다시 계산<br>(Holm 보정)</td><td>단어 15개는 남았다. 5개는 사라졌다</td></tr>
-      <tr><td>더 나온 정도는 어느 범위인가</td><td>자료를 2만 번 다시 뽑아 계산 (부트스트랩)</td><td>1,000번에 약 12번에서 32번 더</td></tr>
-      <tr><td>자료를 조금 바꿔도 같은가</td><td>예비 실험을 빼고, 카드 이름 규칙을 바꿔 계산</td><td>거의 같다 (1,000번에 20번, 22번 더)</td></tr>
-    </table>
-  </div>
-  <p class="caveat">모두 같은 자료를 다시 본 것으로, 새 실험은 아니다. 맞힌 82번 중 49번은 10명에게서 나왔다.</p>
+  <ul class="v5">
+    <li><span class="kw">우연일까?</span><span class="q">다섯 방식의 결과가 정말 다른가<small>카이제곱 검정</small></span><span class="r ok">우연 아님</span></li>
+    <li><span class="kw">충분히 클까?</span><span class="q">차이의 크기가 의미 있는 수준인가<small>크라메르의 V</small></span><span class="r no">작다</span></li>
+    <li><span class="kw">몇 명 탓일까?</span><span class="q">같은 관객이 30번씩 답한 점을 빼고 보면<small>페르소나별 재계산</small></span><span class="r mid">15개만 남음</span></li>
+    <li><span class="kw">얼마나 더?</span><span class="q">자료를 2만 번 다시 뽑아 보면<small>부트스트랩</small></span><span class="r ok">1,000번에 12~32번</span></li>
+    <li><span class="kw">흔들릴까?</span><span class="q">일부 자료를 빼거나 규칙을 바꾸면<small>민감도 점검</small></span><span class="r ok">그대로</span></li>
+  </ul>
+  <p class="caveat">한 줄 요약: 효과는 있지만 작다. 그리고 같은 자료를 다시 본 것이라 새 실험으로 확인해야 한다.</p>
   <p class="foot">3학기, 실험</p>
-  <aside class="notes">차이가 나왔다고 바로 믿지 않고, 그 차이가 진짜인지 다섯 가지로 확인했습니다. 첫째, 다섯 방식의 결과가 정말 다른지 봤고, 우연으로 보기는 어려웠습니다. 둘째, 차이가 충분히 큰지 봤는데, 작았습니다. 처음 정한 목표에 못 미쳤습니다. 셋째, 같은 가상 관객이 서른 번씩 답했기 때문에 그 점을 고려해 사람별로 묶어 다시 계산했습니다. 단어 15개의 효과는 남았지만 5개의 효과는 사라졌습니다. 넷째, 자료를 2만 번 다시 뽑아 보니 1,000번에 12번에서 32번 정도 더 나오는 범위였습니다. 다섯째, 예비 실험을 빼거나 카드 이름 규칙을 바꿔도 결과는 거의 같았습니다. 다만 모두 같은 자료를 다시 본 것이라, 새로 실험해서 확인한 것은 아닙니다. 이 가운데 사람별 계산과 자료를 바꿔 본 점검은 에세이를 쓰면서 추가한 것입니다.</aside>
+  <aside class="notes">차이가 나왔다고 바로 믿지 않고, 다섯 가지 질문으로 확인했습니다. 우연일까? 아니었습니다. 충분히 클까? 작았습니다. 처음 정한 목표에 못 미쳤습니다. 몇 명 탓일까? 같은 가상 관객이 서른 번씩 답했기 때문에 사람별로 묶어 다시 계산했더니, 단어 15개의 효과는 남았지만 5개의 효과는 사라졌습니다. 얼마나 더 나올까? 1,000번에 12번에서 32번 정도 더 나오는 범위였습니다. 흔들릴까? 자료 일부를 빼거나 규칙을 바꿔도 그대로였습니다. 한 줄로 말하면, 효과는 있지만 작고, 같은 자료를 다시 본 것이라 새 실험으로 확인해야 합니다.</aside>
 </section>
 
 <!-- 15 3학기: 반복 -->
@@ -1429,7 +1435,7 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
     page.appendChild(main);
     sec.insertBefore(page, sec.firstChild);
     if (sec.id === "demo142") return;
-    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .kicker, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .main > .lead, .fix, .final, .final-sub, .got div, .ps > div, .demo > *, .three li, .end h2, .end p");
+    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .kicker, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .main > .lead, .fix, .v5 li, .final, .final-sub, .got div, .ps > div, .demo > *, .three li, .end h2, .end p");
     var k = 0;
     items.forEach(function (el) {
       if (el.closest("[data-st]")) return;
