@@ -258,14 +258,17 @@ html, body { background: var(--felt-deep); }
 .but li { padding: 13px 0 13px 22px; border-left: 4px solid var(--red); margin-bottom: 12px; font-size: 27px; background: rgba(0,0,0,.18); }
 
 /* 14. A-PMFS */
-.bars { display: grid; grid-template-columns: 270px 1fr 130px; gap: 15px 24px; align-items: center; font-size: 27px; }
-.bars .bar { height: 46px; background: var(--ivory-dim); border-radius: 0 6px 6px 0; }
+.bars { display: grid; grid-template-columns: 270px 1fr 130px; gap: 9px 24px; align-items: center; font-size: 25px; }
+.bars .bar { height: 36px; background: var(--ivory-dim); border-radius: 0 6px 6px 0; }
 .bars .bar.hit { background: var(--brass); }
 .bars .bar.ctl { background: #7f978b; }
 .bars .v { font-family: var(--serif); font-weight: 900; font-size: 34px; }
 .bars .k small { display: block; font-size: 20px; color: var(--ivory-dim); line-height: 1.2; }
-.verdict { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; font-size: 27px; }
-.verdict div { border-top: 2px solid var(--brass); padding-top: 12px; }
+.barcap { font-size: 21px; color: var(--ivory-dim); margin-bottom: 14px; }
+.barcap b { color: var(--ivory); font-weight: 600; }
+.verdict { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; font-size: 27px; }
+.verdict div { border-top: 2px solid var(--brass); padding-top: 12px; font-size: 23px; color: var(--ivory-dim); line-height: 1.5; }
+.verdict b { display: block; font-family: var(--serif); font-size: 29px; font-weight: 700; color: var(--ivory); margin-bottom: 4px; }
 
 /* 15. 반복 */
 .loop { display: grid; grid-template-columns: 1fr 60px 1fr 60px 1fr; align-items: stretch; margin-top: 6px; }
@@ -1165,20 +1168,21 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
 
 <!-- 14 3학기: A-PMFS -->
 <section>
-  <div class="head" style="margin-bottom:26px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>2차 A-PMFS: 조건을 나누어 다시 묻다</h2></div>
+  <div class="head" style="margin-bottom:10px"><div class="chip"><b>3</b><i>♣&#xFE0E;</i></div><h2>2차 A-PMFS: 조건을 나누어 다시 묻다</h2></div>
+  <p class="barcap">가상 관객 100명에게 다섯 가지 방식으로 3,000번씩 물었을 때, <b>노린 카드가 실제로 나온 비율</b>. 막대가 길수록 잘 통한 것이다.</p>
   <div class="bars" role="img" aria-label="조건별 목표 카드 적중률 막대그래프">
-    <div class="k">통제<small>키워드 없음</small></div><div><div class="bar ctl" style="width:22%"></div></div><div class="v">0.60%</div>
+    <div class="k">통제<small>아무 단어도 안 보여 줌</small></div><div><div class="bar ctl" style="width:22%"></div></div><div class="v">0.60%</div>
     <div class="k">목표 키워드 5개</div><div><div class="bar" style="width:69.6%"></div></div><div class="v">1.90%</div>
     <div class="k">목표 키워드 10개</div><div><div class="bar" style="width:81.7%"></div></div><div class="v">2.23%</div>
     <div class="k">목표 키워드 15개</div><div><div class="bar hit" style="width:100%"></div></div><div class="v">2.73%</div>
-    <div class="k">위약<small>다른 카드의 키워드</small></div><div><div class="bar ctl" style="width:33%"></div></div><div class="v">0.90%</div>
+    <div class="k">위약<small>다른 카드의 단어 15개</small></div><div><div class="bar ctl" style="width:33%"></div></div><div class="v">0.90%</div>
   </div>
   <div class="verdict">
-    <div>다섯 조건, 15,000회. 통제와 키워드 15개 조건의 차이는 <strong>2.13%p</strong>였다.</div>
-    <div>차이는 있었지만 실제 공연에 안정적으로 쓸 수준에는 이르지 못했다.</div>
+    <div><b>단어를 보여 주면 조금 더 맞혔다</b>1,000번 중 6번에서 27번으로. 엉뚱한 단어는 9번으로 거의 그대로였다.</div>
+    <div><b>그래도 무대에 쓰기엔 낮다</b>15개를 보여 줘도 100번에 3번꼴. 관객 앞에서 믿고 쓸 수준은 아니다.</div>
   </div>
   <p class="foot">3학기, 실험</p>
-  <aside class="notes">2차 발표에서는 설계를 고쳤습니다. 아무 키워드도 주지 않는 통제 조건, 키워드 수를 달리한 세 조건, 다른 카드의 키워드를 주는 위약 조건을 두고 15,000회를 돌렸습니다. 목표 카드의 적중률은 0.60퍼센트에서 2.73퍼센트로 올랐지만, 공연에 쓸 만한 크기는 아니었습니다. 자세한 방법은 3학기 발표 자료에 있습니다.</aside>
+  <aside class="notes">결과입니다. 다섯 조건을 각각 3,000번씩, 모두 15,000번 돌렸습니다. 아무 단어도 보여 주지 않았을 때 목표 카드는 1,000번에 6번 나왔습니다. 목표 카드와 뜻이 가까운 단어를 15개 보여 주자 1,000번에 27번으로 늘었습니다. 다른 카드의 단어를 보여 준 경우는 9번으로 거의 그대로였으니, 단어의 내용이 차이를 만든 것으로 보입니다. 하지만 27번이라 해도 100번에 3번꼴입니다. 관객 앞에서 믿고 쓸 수 있는 수준은 아닙니다. 자세한 방법은 3학기 발표 자료에 있습니다.</aside>
 </section>
 
 <!-- 3학기: 여러 방법으로 검사 -->
