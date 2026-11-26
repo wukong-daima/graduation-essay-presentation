@@ -360,6 +360,16 @@ html, body { background: var(--felt-deep); }
 .got div { border-top: 2px solid var(--brass); padding-top: 20px; }
 .got b { display: block; font-family: var(--serif); font-size: 38px; font-weight: 700; margin-bottom: 8px; }
 .got p { font-size: 27px; color: var(--ivory-dim); line-height: 1.55; }
+.gain { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-top: 8px; }
+.gain-l { display: grid; gap: 30px; align-content: start; }
+.gain-l div { border-top: 2px solid var(--brass); padding-top: 16px; }
+.gain b { display: block; font-family: var(--serif); font-size: 34px; font-weight: 700; margin-bottom: 8px; }
+.gain-l p { font-size: 23px; line-height: 1.55; color: var(--ivory-dim); }
+.gain-r { border-top: 2px solid var(--brass); padding-top: 16px; }
+.gain-r ul { list-style: none; margin: 6px 0 0; padding: 0; }
+.gain-r li { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 11px 0; border-bottom: 1px solid var(--felt-line); font-size: 23px; color: var(--ivory); }
+.gain-r li span { width: 20px; font-size: 18px; color: var(--brass); }
+.gain-r li small { font-size: 17px; color: var(--brass); }
 .got b small { font-family: var(--sans); font-size: 19px; font-weight: 500; color: var(--brass); margin-left: 12px; letter-spacing: 0; }
 .ps { display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 40px; margin-top: 8px; }
 .ps > div { border-top: 2px solid var(--brass); padding-top: 18px; }
@@ -1347,14 +1357,24 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
 <!-- 20 회고 -->
 <section>
   <div class="head"><div class="chip"><b>A</b><i>♠&#xFE0E;</i></div><h2>대학원에서 얻은 것</h2></div>
-  <div class="got">
-    <div><b>질문이 바뀌었다</b><p>"어떻게 신기하게 보일까"에서 "마술의 가치를 어떻게 설명할 수 있을까"로.</p></div>
-    <div><b>직관을 가설로 옮기는 법</b><p>공연에서 받은 인상을 조건과 수치로 검증할 수 있는 문장으로 바꾸었다.</p></div>
-    <div><b>결과를 의심하는 법</b><p>결과를 얻는 일만큼, 그 결과를 의심하고 해석을 고치는 일이 중요했다.</p></div>
-    <div><b>측정되지 않는 것</b><p>오래 소중히 여겨 온 것은 눈앞의 사람과 함께 만드는 경험이었다.</p></div>
+  <div class="gain">
+    <div class="gain-l">
+      <div><b>인문학을 알게 되었다</b><p>인문학을 전혀 모르던 공학도였다. 많은 인문학 수업 덕분에 조금은 알게 되었고, 영화와 드라마, 정책에도 인문학의 본질이 녹아 있다는 것을 보게 되었다.</p></div>
+      <div><b>사람에게서 배웠다</b><p>여러 분야에서 온 분들을 보며 자극을 받았다. 좋은 영향도, 반면교사도 많았다.</p></div>
+    </div>
+    <div class="gain-r">
+      <b>해냈다는 성취감</b>
+      <ul>
+        <li><span>♦&#xFE0E;</span>성적 표창 2회</li>
+        <li><span>♦&#xFE0E;</span>과대표</li>
+        <li><span>♦&#xFE0E;</span>연세대 마술동호회 정기공연 주인공<small>300석 규모</small></li>
+        <li><span>♦&#xFE0E;</span>영화 관련 대학원 수업 이수, 영화 스태프로 참여</li>
+        <li><span>♦&#xFE0E;</span>뛰어난 동기들과 훌륭한 교수님들</li>
+      </ul>
+    </div>
   </div>
   <p class="foot">회고</p>
-  <aside class="notes">대학원에서 얻은 것을 네 가지로 정리했습니다. 질문이 바뀌었고, 직관을 가설로 옮기는 법과 결과를 의심하는 법을 배웠고, 측정되지 않는 것이 무엇인지 알게 되었습니다. (여기에 직장과 병행한 경험, 동기들과의 이야기를 덧붙입니다.)</aside>
+  <aside class="notes">대학원에서 얻은 것을 말씀드리겠습니다. 저는 인문학을 전혀 모르던 공학도였습니다. 그런데 이 학과에는 인문학 수업이 많았고, 덕분에 조금은 인문학을 알게 되었습니다. 영화와 드라마, 그리고 정책 속에도 인문학의 본질이 많이 녹아 있다는 것을 보게 되었습니다. 또 여러 분야에서 오신 분들을 보며 자극을 많이 받았습니다. 좋은 영향도 받았고, 반면교사로 삼은 것도 많았습니다. 그리고 저 나름대로 해냈다는 성취감도 느꼈습니다. 성적 표창을 두 번 받았고, 과대표를 맡았고, 300석 규모의 연세대 마술동호회 정기공연에서 주인공으로 섰습니다. 영화 관련 대학원 수업을 들으며 영화 스태프로도 참여했습니다. 무엇보다 뛰어난 동기들과 훌륭한 교수님들을 만난 것이 가장 큰 소득입니다.</aside>
 </section>
 
 <!-- 21 피드 페이지 -->
@@ -1451,7 +1471,7 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
     page.appendChild(main);
     sec.insertBefore(page, sec.firstChild);
     if (sec.id === "demo142") return;
-    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .kicker, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .nc-main, .nc-side .sheet, .main > .lead, .fix, .v5 li, .final-pre, .final, .final-sub, .got div, .ps > div, .demo > *, .three li, .end h2, .end p");
+    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .kicker, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .nc-main, .nc-side .sheet, .main > .lead, .fix, .v5 li, .final-pre, .final, .final-sub, .got div, .gain-l div, .gain-r li, .ps > div, .demo > *, .three li, .end h2, .end p");
     var k = 0;
     items.forEach(function (el) {
       if (el.closest("[data-st]")) return;
