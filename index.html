@@ -320,14 +320,18 @@ html, body { background: var(--felt-deep); }
 .got b { display: block; font-family: var(--serif); font-size: 38px; font-weight: 700; margin-bottom: 8px; }
 .got p { font-size: 27px; color: var(--ivory-dim); line-height: 1.55; }
 .got b small { font-family: var(--sans); font-size: 19px; font-weight: 500; color: var(--brass); margin-left: 12px; letter-spacing: 0; }
-.ps { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 8px; }
+.ps { display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 40px; margin-top: 8px; }
 .ps > div { border-top: 2px solid var(--brass); padding-top: 18px; }
 .ps h3 { font-size: 32px; margin-bottom: 6px; }
 .ps .how { font-size: 23px; color: var(--ivory-dim); line-height: 1.5; margin-bottom: 18px; }
 .tags { display: flex; flex-wrap: wrap; gap: 9px; }
 .tags span { font-size: 20px; padding: 6px 14px; border-radius: 999px; border: 1.5px solid var(--felt-line); color: var(--ivory); }
 .tags span.k { border-color: var(--brass); }
-.ps .plus { margin-top: 16px; font-size: 21px; color: var(--ivory-dim); line-height: 1.5; }
+.arch { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+.arch li { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--felt-line); }
+.arch b { font-size: 20px; white-space: nowrap; font-weight: 700; color: var(--ivory); }
+.arch span { font-size: 14px; text-align: right; white-space: nowrap; color: var(--brass); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.ps .plus { margin-top: 14px; font-size: 21px; color: var(--ivory-dim); line-height: 1.5; }
 
 
 /* 21. 피드 페이지 */
@@ -1118,9 +1122,9 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
     </div>
     <div>
       <h3>2차: 성격 원형 10가지 × 10명</h3>
-      <p class="how">원형마다 10명씩, 100명을 만들어 모두 같은 조건으로 실험했다.</p>
-      <div class="tags"><span>직관적 모험가</span><span>분석적 전략가</span><span>감성적 예술가</span><span>실용적 관리자</span><span>자유로운 방랑자</span><span>따뜻한 조력자</span><span>차가운 회의주의자</span><span>야망찬 도전자</span><span>평온한 관찰자</span><span>신비주의자</span></div>
-      <p class="plus">원형에 맞는 MBTI를 정하고, 이름과 취미, 말버릇까지 붙여 한 사람의 설명문으로 만들었다.</p>
+      <p class="how">원형마다 10명씩, 모두 100명을 만들었다.</p>
+      <ul class="arch"><li><b>직관적 모험가</b><span>ENTP ENFP ESTP ESFP</span></li><li><b>분석적 전략가</b><span>INTJ INTP ISTJ</span></li><li><b>감성적 예술가</b><span>INFP ISFP INFJ</span></li><li><b>실용적 관리자</b><span>ESTJ ESFJ ISTJ</span></li><li><b>자유로운 방랑자</b><span>ISFP INFP ISTP INTP</span></li><li><b>따뜻한 조력자</b><span>ENFJ ESFJ ENFP</span></li><li><b>차가운 회의주의자</b><span>INTP ISTP INTJ</span></li><li><b>야망찬 도전자</b><span>ENTJ ESTJ ENTP</span></li><li><b>평온한 관찰자</b><span>ISFJ INFJ ISTJ</span></li><li><b>신비주의자</b><span>INFJ INFP ENFJ ENFP</span></li></ul>
+      <p class="plus">노란 글씨의 MBTI 중 하나를 정하고, 이름, 취미, 말버릇까지 붙여 한 사람의 소개글로 만들었다.</p>
     </div>
   </div>
   <p class="foot">3학기, 실험</p>
