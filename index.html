@@ -352,7 +352,8 @@ html, body { background: var(--felt-deep); }
 
 /* 19. 결론 */
 .final { font-family: var(--serif); font-weight: 700; font-size: 52px; line-height: 1.5; letter-spacing: -0.01em; max-width: 21em; margin-top: 30px; }
-.final-sub { margin-top: 56px; font-size: 30px; max-width: 32em; color: var(--ivory-dim); }
+.final-pre { font-size: 26px; color: var(--ivory-dim); line-height: 1.55; max-width: 40em; margin-top: 10px; }
+.final-sub { margin-top: 34px; font-size: 30px; max-width: 32em; color: var(--ivory-dim); }
 
 /* 20. 회고 */
 .got { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 50px; margin-top: 16px; }
@@ -1328,10 +1329,11 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
 <!-- 19 4학기: 결론 -->
 <section>
   <div class="head"><div class="chip red"><b>4</b><i>♥&#xFE0E;</i></div><h2>에세이가 도착한 곳</h2></div>
-  <p class="final">15,000회의 시뮬레이션에는 카드의 적중 여부가 남았지만, 그 순간 관객이 무엇을 경험했는지에 대한 기록은 없었다.</p>
-  <p class="final-sub">언어 자극이 카드 선택에 미치는 영향은 AI로 미리 탐색해 볼 수 있어도, 그 선택이 만드는 경험은 관객의 반응으로만 평가할 수 있다.</p>
+  <p class="final-pre">15,000번의 시뮬레이션에는 카드가 맞았는지가 남았다. 그 순간 관객이 무엇을 경험했는지는 남지 않았다.</p>
+  <p class="final">그 빈자리가 알려 주었다.<br>내가 마술에서 오래 소중히 여겨 온 것은<br>눈앞의 사람과 함께 만드는 경험이었다.</p>
+  <p class="final-sub">앞으로도 기술의 도움을 받으며 그 가능성과 한계를 살피고,<br>사람과 사람이 함께 불가능을 경험하는 순간을 만들어 가고자 한다.</p>
   <p class="foot">4학기, 에세이 작성</p>
-  <aside class="notes">에세이의 결론은 이 문장입니다. 실험에는 적중했는지 여부만 남았고, 관객이 무엇을 경험했는지는 남지 않았습니다. 공학으로 잴 수 있는 것과 인문학이 묻는 것이 다르다는 점을, 제 실험이 스스로 보여 준 셈입니다.</aside>
+  <aside class="notes">에세이는 이렇게 끝납니다. 15,000번의 시뮬레이션에는 카드가 맞았는지가 남았지만, 그 순간 관객이 무엇을 경험했는지는 남지 않았습니다. 그런데 그 빈자리가 오히려 저에게 알려 주었습니다. 제가 20년 넘게 마술에서 소중히 여겨 온 것은 카드를 맞히는 일이 아니라, 눈앞의 사람과 함께 만드는 경험이었다는 것을요. 앞으로도 기술의 도움을 받으며 그 가능성과 한계를 살피고, 사람과 사람이 함께 불가능을 경험하는 순간을 만들어 가고 싶습니다.</aside>
 </section>
 
 <section>
@@ -1449,7 +1451,7 @@ html[data-theme="bulletin"] .chap em.new { border-radius: 0; }
     page.appendChild(main);
     sec.insertBefore(page, sec.firstChild);
     if (sec.id === "demo142") return;
-    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .kicker, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .nc-main, .nc-side .sheet, .main > .lead, .fix, .v5 li, .final, .final-sub, .got div, .ps > div, .demo > *, .three li, .end h2, .end p");
+    var items = sec.querySelectorAll(".head h2, .cover h1, .cover .kicker, .cover .sub, .cover .who, .cap li, .order li, .two > *, .asks li, .topics, .branches, .mine .sheet, .also, .stop, .because, .years div, .cyc > *, .pair div, .four div, .study, .todo li, .defs div, .ask, .big, .big + p, .verdict div, .loop > *, .links, .chap div, .legend, .newch .sheet, .nc-main, .nc-side .sheet, .main > .lead, .fix, .v5 li, .final-pre, .final, .final-sub, .got div, .ps > div, .demo > *, .three li, .end h2, .end p");
     var k = 0;
     items.forEach(function (el) {
       if (el.closest("[data-st]")) return;
